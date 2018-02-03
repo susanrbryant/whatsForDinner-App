@@ -1,19 +1,18 @@
 //Global Variables Here: 
-var recipeID; 
-var recipe;
+var recipesID; 
+var recipes;
 var ingredients = []; 
-var recipeObject = {};
-var recipeArr = [];
-var id;
+var recipesArr = [];
 var ingrArr = [];
 var ingrList;
 var ingr;
+var recipeArr;
 
 
 function generateRecipe(){
     $("#randomButton").on("click", function(){
         var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
-        var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=" + recipeID;       
+        var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=" + recipesID;       
   
         $.ajax({
             url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/search",
@@ -23,42 +22,35 @@ function generateRecipe(){
                 sort: "t",
             }, 
             success: (function (result) {
-                recipeArr = JSON.parse(result); 
-                recipeID = recipeArr.recipes[4].recipe_id;
-                id =JSON.stringify(recipeID);
-                var recipeTitle = $("<p>");
-                var recipeImage = $("<img>");
-                console.log(result); // the full object starting with count
-                recipeTitle.text("Recipe: " + recipeArr.recipes[4].title);
-                //key i need the array 
-                $("h2").append(recipeTitle);
-                recipeId = recipeArr.recipes[4].recipe_id; 
+                recipesArr = JSON.parse(result); 
+                recipesID = recipesArr.recipes[4].recipe_id;
+                // console.log(recipeID);
+                var recipesTitle = $("<p>");
+                var recipesImage = $("<img>");
+                recipesTitle.text("Recipe: " + recipesArr.recipes[4].title);
+                $("h2").append(recipesTitle);
+                recipesId = recipesArr.recipes[4].recipe_id; 
 
                 $.ajax({
                     type:"GET",
                     url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
                     data: {
                         key: "1b1fa73fc430d741918a24c4ffe52701",
-                        rId: id
+                        rId: recipesId    
                     },
-                    dataType: "json",
-                    success: function(result) {
-                        // ingrArr = JSON.parse(result);
-                        console.log(ingrArr);  // undefined
-                        ingr = result[recipes];
-                        console.log(ingr);
-                        ingrList = JSON.stringify(ingrArr);
-                        console.log(ingrList);
-                    
-                    // console.log(ingrArr);
-                    //console.log(id); //"22e67a"
-                    //console.log(recipeArr); //  undefined
-                    }
+                    success: (function (result) {
+                        // console.log(result);
+                        recipeArr = JSON.parse(result);
+                        // console.log(recipeArr);
+                        ingrArr = recipeArr.recipe.ingredients; 
+                        console.log(ingrArr);
+                        
+                        var ingrList = $("<ul>");
+
+                    })
                 });
-        
-            console.log(typeof id); // -- undefined
-            console.log(typeof recipeID); // -- undefined
-            // return recipeID;
+
+
             
             })
         });
