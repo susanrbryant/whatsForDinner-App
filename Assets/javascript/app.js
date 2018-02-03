@@ -6,7 +6,7 @@ var recipesArr = [];
 var ingrArr = [];
 var ingrList;
 var ingr;
-var recipeArr;
+var recipeArr = []
 
 function generateRecipe(){
     $("#randomButton").on("click", function(){
@@ -53,15 +53,14 @@ function generateRecipe(){
                         // console.log(result);
                         recipeArr = JSON.parse(result);
                         // console.log(recipeArr);
-                        ingrArr = recipeArr.recipe.ingredients; 
+                        ingrArr = recipeArr.recipe.ingredients;
+                        ingrList.html("ingredients " + ingrArr);
                         console.log(ingrArr);
-                        
-                        var ingrList = $("<ul>");
+                        $(".ingredients").append(ingrList);
+                        // console.log(ingrList);
+
                         var ingr = $("<li>")
                         $(".ingredients").html("Ingredients: " + ingrList)
-                     
-                        
-
                     })
                 });
 
@@ -69,6 +68,8 @@ function generateRecipe(){
             
             })
         });
+
+       
  
   
     // render to page
