@@ -10,9 +10,8 @@ var recipeArr = []
 
 function generateRecipe(){
     $("#randomButton").on("click", function(){
-        var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
-        var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=" + recipesID;       
-  
+        // var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
+        // var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=" + recipesID;       
         $.ajax({
             url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/search",
             type: "GET",
@@ -28,7 +27,6 @@ function generateRecipe(){
                 var recipesImage = $("<img>");
                 recipesTitle.text("Recipe: " + recipesArr.recipes[4].title);
                 $("h2").append(recipesTitle);
-                recipesId = recipesArr.recipes[4].recipe_id; 
                 recipesImage = recipesArr.recipes[4].image_url;
                 console.log(recipesImage);
                 $(".container-recipe-image").attr("src", recipesImage);
@@ -38,10 +36,8 @@ function generateRecipe(){
                     img.src = recipesImage;
                     $('.container-recipe-image').html(img); 
                 }
-                // $(".container-recipe").append(recipesImage);
-                //$('.container-recipe-image').prepend(recipesImage);
-
                 image();
+
                 $.ajax({
                     type:"GET",
                     url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
@@ -54,31 +50,16 @@ function generateRecipe(){
                         recipeArr = JSON.parse(result);
                         // console.log(recipeArr);
                         ingrArr = recipeArr.recipe.ingredients;
-                        ingrList.html("ingredients " + ingrArr);
+                        // console.log(ingrArr);
+                        var ingrList = $("<ul>");
+                        ingrList.html("ingredients: " + ingrArr);
                         console.log(ingrArr);
                         $(".ingredients").append(ingrList);
-                        // console.log(ingrList);
-
-                        var ingr = $("<li>")
-                        $(".ingredients").html("Ingredients: " + ingrList)
+                        // console.log(ingrList);    
                     })
                 });
-
-
-            
             })
         });
-
-       
- 
-  
-    // render to page
-    //     render();
-
-    // var render = function(){            
-    //     $(".container-recipe").html(recipe);
-    
-    // }
     });
 }
 generateRecipe();
