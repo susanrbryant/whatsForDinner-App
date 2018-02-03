@@ -8,7 +8,6 @@ var ingrList;
 var ingr;
 var recipeArr = []
 
-
 function generateRecipe(){
     $("#randomButton").on("click", function(){
         var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
@@ -30,7 +29,19 @@ function generateRecipe(){
                 recipesTitle.text("Recipe: " + recipesArr.recipes[4].title);
                 $("h2").append(recipesTitle);
                 recipesId = recipesArr.recipes[4].recipe_id; 
+                recipesImage = recipesArr.recipes[4].image_url;
+                console.log(recipesImage);
+                $(".container-recipe-image").attr("src", recipesImage);
 
+                function image() {
+                    var img = document.createElement("IMG");
+                    img.src = recipesImage;
+                    $('.container-recipe-image').html(img); 
+                }
+                // $(".container-recipe").append(recipesImage);
+                //$('.container-recipe-image').prepend(recipesImage);
+
+                image();
                 $.ajax({
                     type:"GET",
                     url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
@@ -42,15 +53,14 @@ function generateRecipe(){
                         // console.log(result);
                         recipeArr = JSON.parse(result);
                         // console.log(recipeArr);
-                        ingrArr = recipeArr.recipe.ingredients; 
-                        // console.log(ingrArr);
-                        var ingrList = $("<ul>");
+                        ingrArr = recipeArr.recipe.ingredients;
                         ingrList.html("ingredients " + ingrArr);
                         console.log(ingrArr);
                         $(".ingredients").append(ingrList);
                         // console.log(ingrList);
-                       
 
+                        var ingr = $("<li>")
+                        $(".ingredients").html("Ingredients: " + ingrList)
                     })
                 });
 
