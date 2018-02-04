@@ -1,29 +1,70 @@
-// alert("Hello! I am an alert box!!");
+//Global Variables Here: 
+var recipesID; 
+var recipes;
+var ingredients = []; 
+var recipesArr = [];
+var ingrArr = [];
+var ingrList;
+var ingr;
+var recipeArr = []
 
-// var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=shredded%20chicken";
-// var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=35171";
+function generateRecipe(){
+    $("#randomButton").on("click", function(){
+        // var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
+        // var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=" + recipesID;       
+        $.ajax({
+            url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/search",
+            type: "GET",
+            data: {
+                key: "1b1fa73fc430d741918a24c4ffe52701",
+                sort: "t",
+            }, 
+            success: (function (result) {
+                recipesArr = JSON.parse(result); 
+                recipesID = recipesArr.recipes[4].recipe_id;
+                // console.log(recipeID);
+                var recipesTitle = $("<p>");
+                var recipesImage = $("<img>");
+                recipesTitle.text("Recipe: " + recipesArr.recipes[4].title);
+                $("h2").append(recipesTitle);
+                recipesImage = recipesArr.recipes[4].image_url;
+                console.log(recipesImage);
+                $(".container-recipe-image").attr("src", recipesImage);
+
+                function image() {
+                    var img = document.createElement("IMG");
+                    img.src = recipesImage;
+                    $('.container-recipe-image').html(img); 
+                }
+                image();
+
+                $.ajax({
+                    type:"GET",
+                    url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
+                    data: {
+                        key: "1b1fa73fc430d741918a24c4ffe52701",
+                        rId: recipesId    
+                    },
+                    success: (function (result) {
+                        // console.log(result);
+                        recipeArr = JSON.parse(result);
+                        // console.log(recipeArr);
+                        ingrArr = recipeArr.recipe.ingredients;
+                        // console.log(ingrArr);
+                        var ingrList = $("<ul>");
+                        ingrList.html("ingredients: " + ingrArr);
+                        console.log(ingrArr);
+                        $(".ingredients").append(ingrList);
+                        // console.log(ingrList);    
+                    })
+                });
+            })
+        });
+    });
+}
+generateRecipe();
 
 
-$.ajax({
-    url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
-    type:"GET",
-    data: {
-        key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
-        rId: 35171
-    }
- }).done(function(result){
-    console.log(result)
- });
- 
- $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/search",
-    type: "GET",
-    data: {
-        key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
-        // q: (optional) Search Query (Ingredients should be separated by commas). If this is omitted top rated recipes will be returned.
-        // sort: (optional) How the results should be sorted. See Below for details.
-        // page: (optional) Used to get additional results
-    }
- }).done(function(result){
-    console.log(result)
- });
+
+
+
