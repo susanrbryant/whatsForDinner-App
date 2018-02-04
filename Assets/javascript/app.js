@@ -43,7 +43,7 @@ function generateRecipe(){
                     url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
                     data: {
                         key: "1b1fa73fc430d741918a24c4ffe52701",
-                        rId: recipesId    
+                        rId: recipesID   
                     },
                     success: (function (result) {
                         // console.log(result);
@@ -55,7 +55,20 @@ function generateRecipe(){
                         ingrList.html("ingredients: " + ingrArr);
                         console.log(ingrArr);
                         $(".ingredients").append(ingrList);
-                        // console.log(ingrList);    
+                        // console.log(ingrList); 
+                        $.ajax({
+                            type: "GET",
+                            url: "https://cors-anywhere.herokuapp.com/" + "https://api.trello.com/b/vWslhSUm/grocery-list?",
+                          
+                            data: {
+                                key: "cc833ec00edcc3b36d7ede05ab9a693b",
+                                token: "f88bc094f4b1721712b040e6b644185240a1d6da9f98480d0329776b8d38cd4b"
+                            },
+                            success: (function(result){
+                                console.log(result);
+                                // var newResult = JSON.stringify(result);
+                            })
+                        }) 
                     })
                 });
             })
@@ -63,8 +76,5 @@ function generateRecipe(){
     });
 }
 generateRecipe();
-
-
-
 
 
