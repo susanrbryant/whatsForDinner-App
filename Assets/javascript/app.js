@@ -27,10 +27,22 @@ function generateRecipe(){
                 // console.log(recipeID);
                 var recipesTitle = $("<p>");
                 var recipesImage = $("<img>");
-                recipesTitle.text("Recipe: " + recipesArr.recipes[4].title);
+                recipesTitle.text("Recipe: " + recipesArr.recipes[5].title);
                 $("h2").append(recipesTitle);
-                recipesId = recipesArr.recipes[4].recipe_id; 
+                recipesId = recipesArr.recipes[5].recipe_id; 
+                recipesImage = recipesArr.recipes[5].image_url;
+                console.log(recipesImage);
+                $(".container-recipe-image").attr("src", recipesImage);
 
+                function image() {
+                    var img = document.createElement("IMG");
+                    img.src = recipesImage;
+                    $('.container-recipe-image').html(img); 
+                }
+                // $(".container-recipe").append(recipesImage);
+                //$('.container-recipe-image').prepend(recipesImage);
+
+                image();
                 $.ajax({
                     type:"GET",
                     url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
@@ -49,26 +61,21 @@ function generateRecipe(){
                         console.log(ingrArr);
                         $(".ingredients").append(ingrList);
                         // console.log(ingrList);
-                       
-
+                        $.ajax({
+                            type: "PUT",
+                            url: "https://cors-anywhere.herokuapp.com/" + "https://api.trello.com/b/UsvrOblj/template-grocery-list/",
+                            data: {
+                                key: "cc833ec00edcc3b36d7ede05ab9a693b",
+                                token: "f88bc094f4b1721712b040e6b644185240a1d6da9f98480d0329776b8d38cd4b"
+                            },
+                            success: (function(result){
+                                
+                            })
+                        }) 
                     })
                 });
-
-
-            
             })
         });
-
-       
- 
-  
-    // render to page
-    //     render();
-
-    // var render = function(){            
-    //     $(".container-recipe").html(recipe);
-    
-    // }
     });
 }
 generateRecipe();
