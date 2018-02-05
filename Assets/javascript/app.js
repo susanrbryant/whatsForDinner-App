@@ -8,6 +8,7 @@ var ingrList;
 var ingr;
 var recipeArr = []
 
+
 function generateRecipe(){
     $("#randomButton").on("click", function(){
         // var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
@@ -25,7 +26,7 @@ function generateRecipe(){
                 // console.log(recipeID);
                 var recipesTitle = $("<p>");
                 var recipesImage = $("<img>");
-                recipesTitle.text("Recipe: " + recipesArr.recipes[4].title);
+                recipesTitle.text("Recipe: " + recipesArr.recipes[5].title);
                 $("h2").append(recipesTitle);
                 recipesImage = recipesArr.recipes[4].image_url;
                 console.log(recipesImage);
@@ -43,7 +44,7 @@ function generateRecipe(){
                     url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
                     data: {
                         key: "1b1fa73fc430d741918a24c4ffe52701",
-                        rId: recipesId    
+                        rId: recipesID    
                     },
                     success: (function (result) {
                         // console.log(result);
