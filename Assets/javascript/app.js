@@ -22,16 +22,23 @@ function generateRecipe(){
             }, 
             success: (function (result) {
                 recipesArr = JSON.parse(result); 
-                recipesID = recipesArr.recipes[4].recipe_id;
-                // console.log(recipeID);
+                randomArr = recipesArr.recipes; 
+                // console.log(randomArr);
+                randomArr.sort(function(){return 0.5 - Math.random()});
+
                 var recipesTitle = $("<p>");
                 var recipesImage = $("<img>");
-                recipesTitle.text("Recipe: " + recipesArr.recipes[5].title);
-                $("h2").append(recipesTitle);
-                recipesImage = recipesArr.recipes[4].image_url;
-                console.log(recipesImage);
+        
                 $(".container-recipe-image").attr("src", recipesImage);
-
+                $("h2").empty().append(recipesTitle);
+                for (var i = 0; i < randomArr.length; i++ ) {
+                    // console.log(randomArr[i])
+                    recipesID = randomArr[i].recipe_id;
+                    recipesImage = randomArr[i].image_url;
+                    // console.log(randomArr[i].title);
+                    recipesTitle.html("Recipe: " + randomArr[i].title);
+                }
+                
                 function image() {
                     var img = document.createElement("IMG");
                     img.src = recipesImage;
@@ -52,16 +59,20 @@ function generateRecipe(){
                         // console.log(recipeArr);
                         ingrArr = recipeArr.recipe.ingredients;
                         // console.log(ingrArr);
+                        console.log(ingrArr[6]);
                     
                         $(".ingredients").empty().prepend(ingrArr);
-                        $(".ingredeients").html("ingredients: " + ingrArr);
+                        $(".ingredients").html("ingredients: " + ingrArr);
                         var ingrList = $("<ul>");
+                        for (var i=0; i < ingrArr.length; i++){
+                            $(".ingredients").html(ingrArr[i]); 
+                        }
                         // for loop here
                         // console.log(ingrList); 
-                      
-                        $('ul > li').each(function() {
-                            $(this).prepend("<span>" + ($(this).index() +1) + "</span>");
-                        })
+                        $(this).prepend("<span>" + ($(this).index() +1) + ".</span>");
+                        // $('ul > li').each(function() {
+                            
+                        // })
                         
                     })
                 })
@@ -70,8 +81,5 @@ function generateRecipe(){
     });
 }
 generateRecipe();
-
-
-
 
 
