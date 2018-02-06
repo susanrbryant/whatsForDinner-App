@@ -1,80 +1,72 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+<html lang="en">
+
+<head>
 
 	<meta charset="UTF-8">
     
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	    
+        
+    <!-- CSS --> 
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
         
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">    
+
     
+     
 <!--<link rel="icon" type="image/png" href="assets/img/icons/favicon.png">-->
-    
-<!--
+   
 
-PROBABLY NOT USEING - BOOTSTRAP THREME
-- Optional theme -
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
--->
-    
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-	
 	<title>Random Recipe</title>
     
 </head>
 
 <body>
 
-<script>
-
-</script>
 
 
 <style>
 
-ol, ul {
-    margin-top: 0;
-    margin-bottom: 10px;
-	list-style-type: none;
+
+
+/* BOOTSTRAPS TO OVERRIDE */
+.navbar {
+    position: relative;
+    /*min-height: 50px;*/
+    /*margin-bottom: 20px;*/
+    /**/margin-bottom: 0px;
+	
+    border: 0px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
 }
 
 
 
-
-
-.container-recipe{ 
-	background-color: #ffffff;
-	padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    -webkit-transition: border .2s ease-in-out;
-    -o-transition: border .2s ease-in-out;
-    transition: border .2s ease-in-out;
-}
-
-.container-recipe-image {
-	height: 150px;
-	width: 150px;
-	border: 1px solid #dddddd;
-}
-
-.ingredients { padding: 0px 0px 0px 0px; }
-
-.image-recipe {
-
-}
-
-.read-more{
-	padding-top: 10px;
-	text-align: right;
-}
-
+/* DEVELOPER HELPERS */
 .dev-box-blue{
 	border: 1px solid BLUE;
 }
@@ -87,22 +79,28 @@ ol, ul {
 	border: 1px solid RED;
 }
 
+.div[class*='col-'] {}
+.row{}
 
-/*pexels-photo-small.png*/
+.col-md-12{
+	/*border: 1px solid blue;*/}
 
+.col-md-6{
+	/*border: 1px solid orange;*/}
+
+.col-xs-12 {}
+
+/* DEVELOPER HELPERS */
 
 
 </style>
 
+<div class="wrapper">
 
 
-    <div class="container">
-    
-        <!-- HEADER -->
+<!-- HEADER -->
         <header class="header">
-        
-            <!--<p class="navbar-text navbar-right">Random Recipe<a href="#" class="navbar-link">Mark Otto</a></p>-->
-        
+                
             <!-- NAVIGATION -->
             <nav class="navbar navbar-default">
             
@@ -123,15 +121,16 @@ ol, ul {
                         </button> 
                         -->
                         
-                        <a href="#" class="navbar-brand">Brand</a> 
+                        <a href="#" class="navbar-brand logo">RRD Logo</a> 
                         
                     </div>
             
                     <div id="" class="collapse navbar-collapse" >
-                        
-                        <p class="navbar-text navbar-right">
-                            <!--Signed in as <a href="#" class="navbar-link">Mark Otto</a>-->
-                        </p>
+                        <a href="#" class="search">
+                            <p class="navbar-text navbar-right">
+                                <i class="fas fa-search"></i>
+                            </p>
+                        </a>
                     
                     </div>
                     
@@ -141,37 +140,55 @@ ol, ul {
             <!-- // NAVIGATION -->
                         
         </header>            
-        <!-- // HEADER -->
+<!-- // HEADER -->
                 
-        <!-- CONTENT -->  
+<div class="container">
+
+		<!-- container-fluid -->  
         <div class="container-fluid">
             
-            
+
+			<!-- TITLE ROW -->
             <div class="row">
                 <div class="col-md-12">   
-                    <h1 class="title-random-recipe">Random Recipe Delights</h1>
+                    <h1 class="random-recipe-title">Random Recipe Delights</h1>
                 </div>
             </div>
-            
-            
+            <!-- // TITLE ROW -->
+              
             <!-- content --> 
             <div class="content">
                       
                 <!-- Row 1 --> 
 				<div class="row main-content">
                 
-                	<div class="col-xs-12 col-md-6">
+
+<!-- RECIPE CONTAINER 1 -->	
+                	<div class="col-xs-12 col-md-6 main-content-column">
                     
                         <div class="container-recipe">
 
+<!-- MAIN IMAGE 1 -->
                             <div class="container-recipe-image">
-                            
 								<img href="javascript:image();" alt="Recipe Image" title="Recipe Image" class="image-recipe">
                             </div> 
-                               
-                            <h2>Recipe title</h2>
                             
-                            <h3>Ingredients</h3>
+<!-- RECIPE 1-->   
+                            <h2 class="recipe-title">Recipe title</h2>
+                            
+                            <ul class="recipe">
+                                <li> Cras justo odio</li>
+                                <li>  dapibus ac facilisis in</li>
+                                <li>  Donec id elit non mi porta gravida at eget metus</li>
+                                <li>  egestas eget quam</li>
+                                <li>  Nullam id dolor id nibh ultricies vehicula ut id elit</li>
+                                <li>  egestas eget quam</li>
+                                <li>  Cras justo odio</li>
+                            </ul>
+                            
+                            <h3 class="ingredients-title">Ingredients</h3>
+
+<!-- INGREDIENTS 1 -->
                             <ul class="ingredients">
                                 <li></li>
                                 <li></li>
@@ -183,35 +200,53 @@ ol, ul {
                             </ul>
                         
                         </div>
+
 
                     <button id="randomButton"> random! </button>
                         
+
                     </div>
-								
-                	<div class="col-xs-12 col-md-6">
+					
+<!-- RECIPE CONTAINER 2 -->		
+                	<div class="col-xs-12 col-md-6 main-content-column">
                     
                         <div class="container-recipe">
-
+<!-- MAIN IMAGE 2 -->
                             <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
+								<!-- <img src="assets/images/image-recipe-2.png" alt="Recipe Image" title="Recipe Image" class="image-recipe"> -->
                             </div> 
-                               
-                            <h2>Recipe title</h2>
                             
-                            <h3>Ingredients</h3>
+<!-- RECIPE 2-->  
+                            <h2 class="recipe-title">Recipe title</h2>
+                            
+                            
+                            <ul class="recipes">
+                                <li> Cras justo odio</li>
+                                <li> dapibus ac facilisis in</li>
+                                <li> Donec id elit non mi porta gravida at eget metus</li>
+                                <li> egestas eget quam</li>
+                                <li> Nullam id dolor id nibh ultricies vehicula ut id elit</li>
+                                <li> egestas eget quam</li>
+                                <li> Cras justo odio</li>
+                            </ul>
+                            
+                            
+                                                    
+                            <h3 class="ingredients-title">Ingredients</h3>
+                            
+<!-- INGREDIENTS 2 -->      
                             <ul class="ingredients">
-                                <li>Cras justo odio</li>
-                                <li>dapibus ac facilisis in</li>
-                                <li>Donec id elit non mi porta gravida at eget metus</li>
-                                <li>egestas eget quam</li>
-                                <li>Nullam id dolor id nibh ultricies vehicula ut id elit</li>
-                                <li>egestas eget quam</li>
-                                <li>Cras justo odio</li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
                             </ul>
                         
-                        </div>
                         
+                        </div>
                     </div>
                     
 				</div>
@@ -219,31 +254,35 @@ ol, ul {
 
 
 				<!-- Row 2 -->
-				<div class="row inner-content">
+				<div class="row secondary-content">
                 	<div class="col-xs-6 col-md-3">
                     
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
+                        <div class="container-recipe-thumb">
+                        	<p class="favorite text-right">
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                            </p>
+                            <div class="container-recipe-image-thumb transparent">
+								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe-thumb">
                             </div> 
                                
-							<p class="read-more">more ...</p>
+							<p class="read-more"><a href="#" class="show-more">more ...</a></p>
                         
                         </div>
                     </div>
 
                 	<div class="col-xs-6 col-md-3">
                     
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
+                        <div class="container-recipe-thumb">
+                        	<p class="favorite text-right">
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                            </p>
+                            <div class="container-recipe-image-thumb transparent">
+								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe-thumb">
                             </div> 
                                
-							<p class="read-more">more ...</p>
+							<p class="read-more"><a href="#" class="show-more">more ...</a></p>
                                                     
                         </div>
                         
@@ -251,14 +290,16 @@ ol, ul {
 
                 	<div class="col-xs-6 col-md-3">
                     
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
+                        <div class="container-recipe-thumb">
+                        	<p class="favorite text-right">
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                            </p>
+                            <div class="container-recipe-image-thumb transparent">
+								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe-thumb">
                             </div> 
                                
-							<p class="read-more">more ...</p>
+							<p class="read-more"><a href="#" class="show-more">more ...</a></p>
                         
                         </div>
                         
@@ -266,56 +307,84 @@ ol, ul {
                     
                 	<div class="col-xs-6 col-md-3">
                     
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
+                        <div class="container-recipe-thumb">
+                        	<p class="favorite text-right">
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                            </p>
+                            <div class="container-recipe-image-thumb transparent">
+								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe-thumb">
                             </div> 
 
-                            <p class="read-more">more ...</p>
+                            <p class="read-more"><a href="#" class="show-more">more ...</a></p>
                         
                         </div>
                         
                     </div> 
-				</div>
+				
+                </div>
 				<!-- // Row 2 -->
-                
                 
 
             </div>
-            <!-- // .content --> 
+             <!-- // .content --> 
             
             
-            <footer class="footer">
             
-                <div class="inner-footer">
-                 
-                    &copy; [Add JS Dynamic Year] Susan R Bryant, ..., ...
+            
                 
-                </div>
-            
-            </footer>       
            
             
         </div> 
-        <!-- // CONTENT --> 
-     </div> <!-- // container -->
-  
-    <!-- Script tags go here: -->
-  
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- //container-fluid --> 
+    
+    
+    
+</div> <!-- // CONTAINER -->
+
+
+
+<footer class="footer">
+            
+<div class="row">        
+    <div class="col-xs-6 col-md-6"> 
+    	<div class="social">
+    		<p class="social-icon"><i class="fab fa-github"></i></p>
+    	</div>
+    </div>
+    
+    <div class="col-xs-6 col-md-6"> 
+    	<div class="copyright">
+    		&copy; [Add JS Dynamic Year] Susan R Bryant, ..., ...
+    	</div>
+    </div>
+    
+</div>
+ 
+
+                
+                
+            
+            </footer>   
+
+
+</div> <!-- // WRAPPER -->
+
+
+
+
+<!-- JAVASCRIPT FILES -->
+     
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    
+	<script type="text/javascript" src="assets/javascript/javascript.js"></script>
+    
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    
 
 </body>
 </html>
-
-

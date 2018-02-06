@@ -8,6 +8,7 @@ var ingrList;
 var ingr;
 var recipeArr = []
 
+
 function generateRecipe(){
     $("#randomButton").on("click", function(){
         // var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
@@ -16,21 +17,28 @@ function generateRecipe(){
             url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/search",
             type: "GET",
             data: {
-                key: "1b1fa73fc430d741918a24c4ffe52701",
+                key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
                 sort: "t",
             }, 
             success: (function (result) {
                 recipesArr = JSON.parse(result); 
-                recipesID = recipesArr.recipes[4].recipe_id;
-                // console.log(recipeID);
+                randomArr = recipesArr.recipes; 
+                // console.log(randomArr);
+                randomArr.sort(function(){return 0.5 - Math.random()});
+
                 var recipesTitle = $("<p>");
                 var recipesImage = $("<img>");
-                recipesTitle.text("Recipe: " + recipesArr.recipes[4].title);
-                $("h2").append(recipesTitle);
-                recipesImage = recipesArr.recipes[4].image_url;
-                console.log(recipesImage);
+        
                 $(".container-recipe-image").attr("src", recipesImage);
-
+                $("h2").empty().append(recipesTitle);
+                for (var i = 0; i < randomArr.length; i++ ) {
+                    // console.log(randomArr[i])
+                    recipesID = randomArr[i].recipe_id;
+                    recipesImage = randomArr[i].image_url;
+                    // console.log(randomArr[i].title);
+                    recipesTitle.html("Recipe: " + randomArr[i].title);
+                }
+                
                 function image() {
                     var img = document.createElement("IMG");
                     img.src = recipesImage;
@@ -42,8 +50,8 @@ function generateRecipe(){
                     type:"GET",
                     url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
                     data: {
-                        key: "1b1fa73fc430d741918a24c4ffe52701",
-                        rId: recipesID   
+                        key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
+                        rId: recipesID    
                     },
                     success: (function (result) {
                         // console.log(result);
@@ -51,26 +59,23 @@ function generateRecipe(){
                         // console.log(recipeArr);
                         ingrArr = recipeArr.recipe.ingredients;
                         // console.log(ingrArr);
+                        console.log(ingrArr[6]);
+                    
+                        $(".ingredients").empty().prepend(ingrArr);
+                        $(".ingredients").html("ingredients: " + ingrArr);
                         var ingrList = $("<ul>");
-                        ingrList.html("ingredients: " + ingrArr);
-                        console.log(ingrArr);
-                        $(".ingredients").append(ingrList);
+                        for (var i=0; i < ingrArr.length; i++){
+                            $(".ingredients").html(ingrArr[i]); 
+                        }
+                        // for loop here
                         // console.log(ingrList); 
-                        $.ajax({
-                            type: "GET",
-                            url: "https://cors-anywhere.herokuapp.com/" + "https://api.trello.com/b/vWslhSUm/grocery-list?",
-                          
-                            data: {
-                                key: "cc833ec00edcc3b36d7ede05ab9a693b",
-                                token: "f88bc094f4b1721712b040e6b644185240a1d6da9f98480d0329776b8d38cd4b"
-                            },
-                            success: (function(result){
-                                console.log(result);
-                                // var newResult = JSON.stringify(result);
-                            })
-                        }) 
+                        $(this).prepend("<span>" + ($(this).index() +1) + ".</span>");
+                        // $('ul > li').each(function() {
+                            
+                        // })
+                        
                     })
-                });
+                })
             })
         });
     });
