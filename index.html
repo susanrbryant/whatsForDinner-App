@@ -35,8 +35,8 @@
 
     
      
-<!--<link rel="icon" type="image/png" href="assets/img/icons/favicon.png">-->
-   
+<!-- <link rel="icon" type="image/png" href="assets/img/icons/favicon.png"> -->
+<!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
 
 	<title>Random Recipe</title>
     
@@ -55,7 +55,7 @@
     position: relative;
     /*min-height: 50px;*/
     /*margin-bottom: 20px;*/
-    /**/margin-bottom: 0px;
+    margin-bottom: 0px;
 	
     border: 0px solid transparent;
         border-top-color: transparent;
@@ -144,56 +144,129 @@
                 
 <div class="container">
 
-		<!-- container-fluid -->  
-        <div class="container-fluid">
+		<!-- container-fluid   
+        <div class="container-fluid">-->
             
-
 			<!-- TITLE ROW -->
             <div class="row">
                 <div class="col-md-12">   
                     <h1 class="random-recipe-title">Random Recipe Delights</h1>
                 </div>
             </div>
-            <!-- // TITLE ROW -->
+
               
             <!-- content --> 
             <div class="content">
-                      
-                <!-- Row 1 --> 
-				<div class="row main-content">
                 
+<!-- Row 1 -->
+				<div class="row main-content">
 
-<!-- RECIPE CONTAINER 1 -->	
                 	<div class="col-xs-12 col-md-6 main-content-column">
                     
-                        <div class="container-recipe">
-
+<!-- RECIPE CONTAINER 1 --> 
+                        <div id="main-content-col-1" class="container-recipe">
 <!-- MAIN IMAGE 1 -->
-                            <div class="container-recipe-image">
 
-								<!--<img src="assets/images/image-recipe-1.png" alt="Recipe Image" title="Recipe Image" class="image-recipe">-->
+<style>
+
+
+	
+	
+.content{}	
+	
+	
+.row.main-content {
+	position: relative;
+	padding: 0px !important;
+}
+
+.container-recipe{}
+	
+.container-recipe-image {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	height: 70%;
+	max-height: 300px;
+	border: 1px solid BLACk;
+	clip: rect(0px, 0px, 400px, 400px);
+}
+
+.container-recipe-image > img{
+	left: -50%;
+	position: relative;
+	top: -75%;
+	clip: rect(0px, 100px, 100px, 0px);	
+}
+
+.main-content-column {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.container-recipe-image > img{
+
+	clip: rect(60px, 60px, 60px, 60px);
+}
+
+.main-content, .main-content > div[class*='col-'] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	display: flex; 
+    flex: 1 1 auto;	
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#randomButton{
+	margin-bottom: 20px;}
+
+
+
+</style>
+							<!-- id="image-recipe-1" = ADDED -->
+                            <div class="container-recipe-image" id="image-recipe-1">
+
+								<!-- TESTING - <img src="assets/images/image-recipe-1.png" alt="Recipe Image" title="Recipe Image" class="image-recipe"> -->
 
 								<img href="javascript:image();" alt="Recipe Image" title="Recipe Image" class="image-recipe">
 
                             </div> 
                             
-<!-- RECIPE 1-->   
-                            <h2 class="recipe-title">Recipe title</h2>
+<!-- RECIPE TITLE 1 -->  			
+                            <!-- id="recipe-title-1" = ADDED -->
+                            <h2 id="recipe-title-1" class="recipe-title">
+                            	
+                                <!-- [id] #recipe-title-1 - Add Recipe title 1 in here - Using the ID -->
+                                
+                            </h2> 
                             
-                            <ul class="recipe">
-                                <li>Cras justo odio</li>
-                                <li>dapibus ac facilisis in</li>
-                                <li>Donec id elit non mi porta gravida at eget metus</li>
-                                <li>egestas eget quam</li>
-                                <li>Nullam id dolor id nibh ultricies vehicula ut id elit</li>
-                                <li>egestas eget quam</li>
-                                <li>Cras justo odio</li>
+<!-- RECIPE 1 -->
+                            <!-- id="recipe-1" ADDED --> 
+                            <ul id="recipe-1" class="recipe">
+                            
+                            	<!-- [id] #recipe-1 - Add Recipe 1 in here -->
+
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                
                             </ul>
+                            
                             
                             <h3 class="ingredients-title">Ingredients</h3>
 
 <!-- INGREDIENTS 1 -->
-                            <ul class="ingredients">
+							<!-- id="recipe-ingredients-1" ADDED --> 
+                            <ul id="recipe-ingredients-1" class="ingredients">
+                            
+                            	<!-- [id] #recipe-ingredients-1 - Add ingredients 1 in here -->
+                                
                                 <li></li>
                                 <li></li>
                                 <li></li>
@@ -201,58 +274,94 @@
                                 <li></li>
                                 <li></li>
                                 <li></li>
+                                
                             </ul>
                         
                         </div>
 
-                    <button id="randomButton"> random! </button>
-                        
                     </div>
-					
-<!-- RECIPE CONTAINER 2 -->		
+                    
+                    
+	
                 	<div class="col-xs-12 col-md-6 main-content-column">
                     
-                        <div class="container-recipe">
+<!-- RECIPE CONTAINER 2 --> 
+                        <!-- id="main-content-col-2" = ADDED -->
+                        <div id="main-content-col-2" class="container-recipe">
+                        
 <!-- MAIN IMAGE 2 -->
-                            <div class="container-recipe-image">
-								<img src="assets/images/image-recipe-2.png" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-                            </div> 
+							<!-- id="image-recipe-2" = ADDED -->
+                            <div class="container-recipe-image" id="image-recipe-1">
                             
-<!-- RECIPE 2-->  
-                            <h2 class="recipe-title">Recipe title</h2>
+								<img src="assets/images/image-recipe-2.png" alt="Recipe Image" title="Recipe Image" class="image-recipe">
+                                
+                            </div> 
                              
-                            <ul class="recipe">
-                                <li>Cras justo odio</li>
-                                <li>dapibus ac facilisis in</li>
-                                <li>Donec id elit non mi porta gravida at eget metus</li>
-                                <li>egestas eget quam</li>
-                                <li>Nullam id dolor id nibh ultricies vehicula ut id elit</li>
-                                <li>egestas eget quam</li>
-                                <li>Cras justo odio</li>
+<!-- RECIPE TITLE 2 -->  			
+                            <!-- id="recipe-title-2" ADDED -->
+                            <h2 id="recipe-title-2" class="recipe-title">
+                            	
+                                <!-- [id] #recipe-title-2 - Add Recipe title 2 in here - Using the ID -->
+                                
+                            </h2> 
+                             
+<!-- RECIPE 2 -->
+                            <!-- id="recipe-2" ADDED --> 
+                            <ul id="recipe-2" class="recipe">
+                            
+                            	<!-- [id] #recipe-2 - Add Recipe 2 in here -->
+                                
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                
                             </ul>
                             
                                                     
                             <h3 class="ingredients-title">Ingredients</h3>
                             
 <!-- INGREDIENTS 2 -->
-                            <ul class="ingredients">
-                                <li>Cras justo odio</li>
-                                <li>dapibus ac facilisis in</li>
-                                <li>Donec id elit non mi porta gravida at eget metus</li>
-                                <li>egestas eget quam</li>
-                                <li>Nullam id dolor id nibh ultricies vehicula ut id elit</li>
-                                <li>egestas eget quam</li>
-                                <li>Cras justo odio</li>
+							<!-- id="recipe-ingredients-2" ADDED -->
+                            <ul id="recipe-ingredients-2" class="ingredients">
+                            
+                            	<!-- [id] #recipe-ingredients-2 - Add ingredients 2 in here -->
+                                
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+
+                                
                             </ul>
                         
                         </div>
+                        
                     </div>
                     
 				</div>
-				<!-- // Row 1 -->
+<!-- // Row 1 -->
+                
+             
+             
+              
+<!-- Row 2 -->
+				<div class="row change-recipes">
+                	<div class="col-md-12">
+                    	<button id="randomButton"> random! </button>
+                    </div>
+                </div>
+<!-- //Row 2 -->        
+                
 
 
-				<!-- Row 2 -->
+<!-- Row 3 -->
 				<div class="row secondary-content">
                 	<div class="col-xs-6 col-md-3">
                     
@@ -261,11 +370,13 @@
                                 <i class="far fa-heart"></i>
                                 <i class="fas fa-heart"></i>
                             </p>
-                            <div class="container-recipe-image-thumb transparent">
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe-thumb">
+                            <div class="container-recipe-image-thumb">
+								<img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" class="image-recipe-thumb">
                             </div> 
                                
-							<p class="read-more"><a href="#" class="show-more">more ...</a></p>
+							<p class="read-more">
+                            	<a href="#" class="show-more">more ...</a>
+                            </p>
                         
                         </div>
                     </div>
@@ -277,11 +388,13 @@
                                 <i class="far fa-heart"></i>
                                 <i class="fas fa-heart"></i>
                             </p>
-                            <div class="container-recipe-image-thumb transparent">
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe-thumb">
+                            <div class="container-recipe-image-thumb">
+								<img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" class="image-recipe-thumb">
                             </div> 
                                
-							<p class="read-more"><a href="#" class="show-more">more ...</a></p>
+							<p class="read-more">
+                            	<a href="#" class="show-more">more ...</a>
+                            </p>
                                                     
                         </div>
                         
@@ -294,11 +407,13 @@
                                 <i class="far fa-heart"></i>
                                 <i class="fas fa-heart"></i>
                             </p>
-                            <div class="container-recipe-image-thumb transparent">
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe-thumb">
+                            <div class="container-recipe-image-thumb">
+								<img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" class="image-recipe-thumb">
                             </div> 
                                
-							<p class="read-more"><a href="#" class="show-more">more ...</a></p>
+							<p class="read-more">
+                            	<a href="#" class="show-more">more ...</a>
+                            </p>
                         
                         </div>
                         
@@ -311,60 +426,62 @@
                                 <i class="far fa-heart"></i>
                                 <i class="fas fa-heart"></i>
                             </p>
-                            <div class="container-recipe-image-thumb transparent">
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe-thumb">
-                            </div> 
 
-                            <p class="read-more"><a href="#" class="show-more">more ...</a></p>
+                            <div class="container-recipe-image-thumb">
+								<img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" class="image-recipe-thumb">
+                            </div> 
+                            
+                            <p class="read-more">
+                            	<a href="#" class="show-more">more ...</a>
+                            </p>
                         
                         </div>
                         
                     </div> 
 				
                 </div>
-				<!-- // Row 2 -->
+				<!-- // Row 3 -->
                 
 
+
+
+
+
             </div>
-             <!-- // .content --> 
+			<!-- // .content --> 
             
             
             
-            
-                
-           
-            
-        </div> 
-        <!-- //container-fluid --> 
-    
-    
-    
+
 </div> <!-- // CONTAINER -->
 
 
 
-<footer class="footer">
-            
-<div class="row">        
-    <div class="col-xs-6 col-md-6"> 
-    	<div class="social">
-    		<p class="social-icon"><i class="fab fa-github"></i></p>
-    	</div>
-    </div>
-    
-    <div class="col-xs-6 col-md-6"> 
-    	<div class="copyright">
-    		&copy; [Add JS Dynamic Year] Susan R Bryant, ..., ...
-    	</div>
-    </div>
-    
-</div>
- 
-
+    <!-- FOOTER -->
+    <footer class="footer">
                 
-                
+        <div class="row"> 
+               <!-- TOP OF PAGE LINK - SCROLLING -->
+                <a id="scrolling" href="#top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+                <div class="col-xs-12 col-md-6"> 
+                    <div class="social">
+                        <p class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </p>
+                    </div>
+                </div>
             
-            </footer>   
+                <div class="col-xs-12 col-md-6"> 
+                    <div class="copyright">
+                        Copyright &copy; <script>document.write(new Date().getFullYear());</script> by Susan R Bryant, ..., ...
+                    </div>
+                </div>
+            
+        </div>
+     
+    </footer>   
 
 
 </div> <!-- // WRAPPER -->
@@ -373,7 +490,8 @@
 
 
 <!-- JAVASCRIPT FILES -->
-     
+
+    
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -385,6 +503,27 @@
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     
 
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('#randomButton').trigger('click');
+	
+		});
+		
+
+		/* TOP OF PAGE LINK - SCROLLING */
+		$(window).scroll(function() {
+			if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
+				$('#scrolling').fadeIn(200);
+			} else {
+				$('#scrolling').fadeOut(200);
+			}
+		});
+		
+		
+    </script>
+    
+    
 </body>
 
 </html>
