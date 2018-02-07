@@ -417,7 +417,17 @@ footer {
 }
 
 
-
+  
+  input {
+	border: none;
+	display: block;
+	width: 45.0%;
+	line-height: 1.5;
+	padding: 8px 0 8px 10px;
+	border-bottom: 1px solid #cfcbcc;
+	outline:0;
+  }
+	
 
 
 
