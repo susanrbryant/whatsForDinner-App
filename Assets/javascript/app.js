@@ -44,7 +44,7 @@ function generateRecipe(){
                 recipesURL.attr("href", sourceURL);
                 recipesURL.attr("target", "_blank");
                 recipesURL.text("Click here for the recipe!"); 
-                $("#recipes-url").append(recipesURL);
+                $("#recipes-url").empty().append(recipesURL);
                 console.log(recipesURL);
                 $("#recipe-title").empty().append(recipesTitle);
 
