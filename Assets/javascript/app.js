@@ -61,10 +61,11 @@ function generateRecipe(){
                         $("#ingrButton").on("click", function(){
                             //create a div that toggles classes to hide/show
                             for (var i=0; i < ingrArr.length; i++){
-                                $("#ingredients").append( "<li>" + ingrArr[i]+ "</li>");
+                                $("#ingredients").append( "<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
                                 // console.log(ingrArr);
                                 // console.log(groceryList);
-                            }
+                                                   
+                             }
                         })
                     })
                 })
@@ -73,5 +74,4 @@ function generateRecipe(){
     });
 }
 generateRecipe();
-
 
