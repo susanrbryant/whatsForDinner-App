@@ -155,200 +155,34 @@
                     <h1 class="random-recipe-title">Random Recipe Delights</h1>
                 </div>
             </div>
-
-              
             <!-- content --> 
             <div class="content">
-                
-<!-- Row 1 -->
 				<div class="row main-content">
-
                 	<div class="col-xs-12 col-md-6 main-content-column">
-                    
-<!-- RECIPE CONTAINER 1 --> 
-                        <div id="main-content-col-1" class="container-recipe">
-<!-- MAIN IMAGE 1 -->
-
-
-<style>
-
-
-	
-	
-.content{}	
-	
-	
-.row.main-content {
-	position: relative;
-	padding: 0px !important;
-}
-
-.container-recipe{}
-	
-.container-recipe-image {
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-	height: 70%;
-	max-height: 300px;
-	border: 1px solid BLACk;
-	clip: rect(0px, 0px, 400px, 400px);
-}
-
-.container-recipe-image > img{
-	left: -50%;
-	position: relative;
-	top: -75%;
-	clip: rect(0px, 100px, 100px, 0px);	
-}
-
-.main-content-column {
-	position: relative;
-	margin-bottom: 20px;
-}
-
-.container-recipe-image > img{
-
-	clip: rect(60px, 60px, 60px, 60px);
-}
-
-.main-content, .main-content > div[class*='col-'] {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-	display: flex; 
-    flex: 1 1 auto;	
-	justify-content: center;
-	flex-wrap: wrap;
-}
-
-#randomButton{
-	margin-bottom: 20px;}
-
-
-
-</style>
-							<!-- id="image-recipe-1" = ADDED -->
-                            <div class="container-recipe-image" id="image-recipe-1">
-
-								<!-- TESTING - <img src="assets/images/image-recipe-1.png" alt="Recipe Image" title="Recipe Image" class="image-recipe"> -->
-
-								<img href="javascript:image();" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-
-
-                            <div class="container-recipe-image">
-								<img href="javascript:image();" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-
-                            </div> 
-                            
-<!-- RECIPE TITLE 1 -->  			
-                            <!-- id="recipe-title-1" = ADDED -->
-                            <h2 id="recipe-title-1" class="recipe-title">
-                            	
-                                <!-- [id] #recipe-title-1 - Add Recipe title 1 in here - Using the ID -->
-                                
-                            </h2> 
-                            
-<!-- RECIPE 1 -->
-                            <!-- id="recipe-1" ADDED --> 
-                            <ul id="recipe-1" class="recipe">
-                            	<!-- [id] #recipe-1 - Add Recipe 1 in here -->
-
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            
-                            
-                            <h3 class="ingredients-title">Ingredients</h3>
-
-<!-- INGREDIENTS 1 -->
-							<!-- id="recipe-ingredients-1" ADDED --> 
-                            <ul id="recipe-ingredients-1" class="ingredients">
-                            
-                            	<!-- [id] #recipe-ingredients-1 - Add ingredients 1 in here -->
-                                
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                
-                            </ul>
-                        
-                        </div>
-
-	
-                	<div class="col-xs-12 col-md-6 main-content-column">
-                    
-<!-- RECIPE CONTAINER 2 --> 
-                        <!-- id="main-content-col-2" = ADDED -->
                         <div id="main-content-col-2" class="container-recipe">
-                        
-<!-- MAIN IMAGE 2 -->
-
                             <div class="container-recipe-image">
-								<!-- <img src="assets/images/image-recipe-2.png" alt="Recipe Image" title="Recipe Image" class="image-recipe"> -->
+                                <img href="javascript:image();" alt="Recipe Image" title="Recipe Image" class="image-recipe">
                             </div> 
-                             
-<!-- RECIPE TITLE 2 -->  			
-                            <!-- id="recipe-title-2" ADDED -->
-                            <h2 id="recipe-title-2" class="recipe-title">
-                            	
-                                <!-- [id] #recipe-title-2 - Add Recipe title 2 in here - Using the ID -->
-                                
-                            </h2> 
-                             
-<!-- RECIPE 2 -->
-                            <!-- id="recipe-2" ADDED --> 
-                            <ul id="recipe-2" class="recipe">
-                            
-                            	<!-- [id] #recipe-2 - Add Recipe 2 in here -->
-                                
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            
-                            
-                                                    
-                            <h3 class="ingredients-title">Ingredients</h3>
-                            
-<!-- INGREDIENTS 2 -->
-							<!-- id="recipe-ingredients-2" ADDED -->
-                            <ul id="recipe-ingredients-2" class="ingredients">
-                            
-                            	<!-- [id] #recipe-ingredients-2 - Add ingredients 2 in here -->
-                                
+                            <h2 id="recipe-title" class="recipe-title"></h2> 
 
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                          </ul>
-                        
+                            <!-- Link to recipe id="recipe-url"-->
+                                                   
+                            <h3 class="ingredients-title">Ingredients</h3>
+                    
+                            <button id="ingrButton">Grocery List</button>
+                            <div id="groceryList">
+                                <ul id="ingredients" class="ingredients">
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+    
                         </div>
                         
                     </div>
                     
 				</div>
-<!-- // Row 1 -->
-                
-             
-             
+<!-- // Row 1 -->   
               
 <!-- Row 2 -->
 				<div class="row change-recipes">
@@ -357,10 +191,8 @@
                     </div>
                 </div>
 <!-- //Row 2 -->        
-                
 
-
-<!-- Row 3 -->
+<!-- Row 3
 				<div class="row secondary-content">
                 	<div class="col-xs-6 col-md-3">
                     
@@ -381,8 +213,8 @@
                     </div>
 
                 	<div class="col-xs-6 col-md-3">
-                    
-                        <div class="container-recipe-thumb">
+                     -->
+                        <!-- <div class="container-recipe-thumb">
                         	<p class="favorite text-right">
                                 <i class="far fa-heart"></i>
                                 <i class="fas fa-heart"></i>
@@ -397,11 +229,11 @@
                                                     
                         </div>
                         
-                    </div>
+                    </div> -->
 
-                	<div class="col-xs-6 col-md-3">
-                    
-                        <div class="container-recipe-thumb">
+                	<!-- <div class="col-xs-6 col-md-3">
+                     -->
+                        <!-- <div class="container-recipe-thumb">
                         	<p class="favorite text-right">
                                 <i class="far fa-heart"></i>
                                 <i class="fas fa-heart"></i>
@@ -415,9 +247,9 @@
                             </p>
                         
                         </div>
-                        
-                    </div>
-                    
+                         -->
+                    <!-- </div>
+                     -->
                 	<div class="col-xs-6 col-md-3">
                     
                         <div class="container-recipe-thumb">
@@ -502,15 +334,16 @@
     
 
 	<script type="text/javascript">
-		$(document).ready(function(){
+		// $(document).ready(function(){
 
-			$('#randomButton').trigger('click');
+		// 	$('#randomButton').trigger('click');
 	
-		});
+		// }); 
 		
 
 		/* TOP OF PAGE LINK - SCROLLING */
-		$(window).scroll(function() {
+        
+        $(window).scroll(function() {
 			if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
 				$('#scrolling').fadeIn(200);
 			} else {
