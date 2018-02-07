@@ -139,7 +139,8 @@
                         
 <!-- JS Title pulled in -->	
                             
-						</h2>   
+                        </h2>   
+                        <div id="recipes-url"></div>
                              
 <!-- I DONT THINK WE ARE USING RECIPE -->
                         <!-- #recipe -->
@@ -338,16 +339,16 @@
     
 
 	<script type="text/javascript">
-	
 		$(document).ready(function(){
 
 			$('#randomButton').trigger('click');
 	
-		});
+		}); 
 		
-		/* TOP OF PAGE LINK - SCROLLING */
+
+		 /* TOP OF PAGE LINK - SCROLLING */
 		$(window).scroll(function() {
-			if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px display
+			if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
 				$('#scrolling').fadeIn(200);
 			} else {
 				$('#scrolling').fadeOut(200);
