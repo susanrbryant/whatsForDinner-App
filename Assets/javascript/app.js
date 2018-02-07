@@ -17,7 +17,7 @@ function generateRecipe(){
             url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/search",
             type: "GET",
             data: {
-                key: "51e4216e1838bb74cd755821cf711dd6",
+                key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
                 sort: "t",
             }, 
             success: (function (result) {
@@ -54,32 +54,37 @@ function generateRecipe(){
                     $('.container-recipe-image').html(img); 
                 }
                 image();
+                $("#ingrButton").on("click", function(){
+                    $.ajax({
+                        type:"GET",
+                        url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
+                        data: {
+                            key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
+                            rId: recipesID    
+                        },
+                        success: (function (result) {
+                            recipeArr = JSON.parse(result);
+                            ingrArr = recipeArr.recipe.ingredients;
+                            console.log(typeof recipesID, recipesID);
 
-                $.ajax({
-                    type:"GET",
-                    url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
-                    data: {
-                        key: "51e4216e1838bb74cd755821cf711dd6",
-                        rId: recipesID    
-                    },
-                    success: (function (result) {
-                        recipeArr = JSON.parse(result);
-                        ingrArr = recipeArr.recipe.ingredients;
-                        console.log(typeof recipesID, recipesID);
-                        $("#ingrButton").on("click", function(){
-                            //create a div that toggles classes to hide/show
-                            for (var i=0; i < ingrArr.length; i++){
-                                $("#ingredients").append( "<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
-                                // console.log(ingrArr);
-                                // console.log(groceryList);
-                                                   
-                             }
+                                //create a div that toggles classes to hide/show
+                                for (var i=0; i < ingrArr.length; i++){
+                                    console.log(ingrArr[i]);
+                                    $("#ingredients").append( "<li>" + ingrArr[i]+ "</li>");
+
+                                    // console.log(groceryList);
+                                                    
+                                }
+                            }),
+                        error: (function (error) {
+                            console.log("error: " + error);
                         })
-                    }), 
-                    error: function(error) {
-                        console.log("error: " + error);
-                    }
-                })
+                    })
+                });
+       
+            }),
+            error: (function (error) {
+                console.log(error);
             })
         });
     });
