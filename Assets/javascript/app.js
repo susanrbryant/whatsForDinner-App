@@ -59,11 +59,11 @@ function generateRecipe(){
                         ingrArr = recipeArr.recipe.ingredients;
  
                         $("#ingrButton").on("click", function(){
+                            //create a div that toggles classes to hide/show
                             for (var i=0; i < ingrArr.length; i++){
-                                groceryList += "<li>" + ingrArr[i]+ "</li>";
+                                $("#ingredients").append( "<li>" + ingrArr[i]+ "</li>");
                                 // console.log(ingrArr);
                                 // console.log(groceryList);
-                                $("#ingredients").html(groceryList);
                             }
                         })
                     })
