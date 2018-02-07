@@ -1,12 +1,31 @@
 
 
+/**** DEVELOPER HELPERS *********************************/
+.dev-box-blue{border: 1px solid BLUE;}
+
+.dev-box-green{border: 1px solid GREEN;}
+
+.dev-box-red{border: 1px solid RED;}
+
+.div[class*='col-'] {}
+
+.row{}
+
+.col-md-12{/*border: 1px solid blue;*/}
+
+.col-md-6{/*border: 1px solid orange;*/}
+
+.col-xs-12 {}
+
+/**** END - DEVELOPER HELPERS ***************************/
+
+
+
 
 
 body {
-	/*font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;*/	
 	/*font-family: 'Open Sans', sans-serif;*/
 	font-family: 'Montserrat', sans-serif;
-
 	color: #777777;
 	font-size: 14px;
 	margin: 0 auto;
@@ -48,15 +67,10 @@ h1, h2, h3 {
 }
 
 h1.random-recipe-title {
-	color: #777777;
-	font-size: 1.7em;
+	color: #4aaaa5;
+	font-size: 3.1em;
 	line-height: 1.1em;
-}
-
-h1.random-recipe-title {
-	color: #777777;
-	font-size: 1.7em;
-	line-height: 1.1em;
+	font-weight: 900;
 }
 
 h2.recipe-title{
@@ -69,8 +83,14 @@ h3.ingredients-title{
 	line-height: 1.3em;
 }
 
+h3.random-whats-dinner {
+	font-size: 2.1em;
+	color: #777777;
+}
+
 p.favorite{
-	color: #efb11c;}
+	color: #efb11c;
+}
 
 
 .far.fa-heart{}
@@ -79,37 +99,54 @@ p.favorite{
 
 
 /* HEADER & NAVIGATION ========================================================= */
-header { 
-    background-color: #f8f8f8;
+header, .navbar-default { 
+    background-color: #777777;
+	border-bottom: 2px solid #444444;
 	margin: 0px 0px 0px 0px;
-	-webkit-box-shadow: 0px 5px 11px -5px rgba(196,196,196,1);
-	-moz-box-shadow: 0px 5px 11px -5px rgba(196,196,196,1);
-	box-shadow: 0px 5px 11px -5px rgba(196,196,196,1);
+	-webkit-box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
+	-moz-box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
+	box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
+}
+
+/* BOOTSTRAP OVERRIDE */
+.navbar {
+	border-radius: 0px;
+    position: relative;
+    /*min-height: 50px;*/
+    /*margin-bottom: 20px;*/
+    margin-bottom: 0px;
+    border: 0px solid transparent;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
 }
 
 
-
-.navbar-default .navbar-brand,
-.logo{
+/* LOGO */
+a.navbar-brand.logo{
 	font-family: 'Georgia', Times, Times New Roman, serif;
-	color: #4aaaa5;}
+	text-decoration: none;
+	background-color: #4aaaa5; 
+	color: #ffffff; 
+	margin: 0px 10px 0px 10px;
+}
+	
+/* NOT USING AT THE MOMENT
+a.navbar-brand.logo:link {color: #ffffff;}
+a.navbar-brand.logo:visited {color: #ffffff;}
+a.navbar-brand.logo:hover {
+	background-color: #dddddd;
+	color: #4aaaa5;
+}
 
-/*
+a.navbar-brand.logo:active {color: #ffffff;}
+*/
+
+/* NOT USING AT THE MOMENT
+
 nav {
 	margin-bottom: -5px;
-}
-
-.logo {
-	background-color: #4aaaa5;
-	padding: 7px 3px 8px 3px;
-}	
-	
-.logo h1 {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    font-size: 25px;
-    color: #ffffff;
-    border-bottom: 0px;
 }
 
 .col-xs-4 .nav-link {
@@ -139,6 +176,7 @@ nav .col-sm-2 {
 }
 */
 
+
 /* CONTENT ===================================================================== */
 .wrapper {
 	background-color: #E5E5E5;
@@ -153,33 +191,55 @@ nav .col-sm-2 {
 	background: linear-gradient(to bottom, rgba(242,242,242,1) 0%,rgba(254,254,254,1) 66%,rgba(254,254,254,1) 86%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
-	
-	
-
-	/*background-image: url(../images/testing-bg.jpg);*/
-	/*background-repeat: no-repeat;*/
-	/*background-size: cover;*/
-
-	
-
 }
 
 
 /* CONTAINERS ================================================================== */
-
-
-
 .container-fluid {}
 
 .content {}
 
+/* HOME */
+.intro{	background-image: url(../images/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 50px;}
+
+.introduction{
+	height: 500px;
+	text-align: center;
+	padding: 100px 0px 0px 0px;}
+
+.change-recipes{
+	border: 2px solid #777777;
+	width: 260px;
+	padding: 20px;
+	margin: 30px auto;}
+
+.row.change-recipes .col-md-12{
+	padding-right: 0px; 
+	padding-left: 0px;}
 
 
+.row.main-content {
+	position: relative;
+	padding: 0px;
+}
 
+.main-content, .main-content > div[class*='col-'] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	display: flex; 
+    flex: 1 1 auto;	
+	justify-content: center;
+	flex-wrap: wrap;
+}
 
-
-.main-content-column {}
-
+.main-content-column {
+	position: relative;
+	margin-bottom: 40px;
+}
 
 .container-recipe{ 
 	/*background-color: #ffffff;*/
@@ -194,8 +254,8 @@ nav .col-sm-2 {
     -webkit-transition: border .2s ease-in-out;
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
-
 }
+
 
 .container-recipe-thumb {
 	border: 1px solid #dddddd;
@@ -204,6 +264,13 @@ nav .col-sm-2 {
 }
 
 
+.container-recipe-image > img{
+	left: -50%;
+	position: relative;
+	top: -75%;
+	/* clip: rect(60px, 60px, 60px, 60px); */
+	clip: rect(0px, 100px, 100px, 0px);	
+}
 
 
 
@@ -211,16 +278,14 @@ nav .col-sm-2 {
 
 
 
-/* CONTENT ===================================================================== */
-ul.ingredients,
-ul.recipe {
-	padding: 0px 0px 0px 0px; 
-}
-
-
 /* IMAGES ====================================================================== */
 .container-recipe-image {
-
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	height: 70%;
+	max-height: 300px;
+	clip: rect(0px, 0px, 400px, 400px);
 }
 
 .image-recipe {
@@ -235,7 +300,11 @@ ul.recipe {
 	width: 100%;
 }
 
-
+/* CONTENT ===================================================================== */
+ul.ingredients,
+ul.recipe {
+	padding: 0px 0px 0px 0px; 
+}
 
 
 
@@ -296,7 +365,6 @@ ul.recipe {
 }
 
 
-
 /* FOOTER ====================================================================== */
 footer {
 	width: 100%;
@@ -324,23 +392,16 @@ footer {
 	padding-bottom: 20px;
 }
 
-/* FORMS ======================================================================= 
-label {
-	font-weight: normal;
-}
 
-.form-control {
-	border-radius: 0px;
-}
-
+/* BUTTONS ===================================================================== */
 .btn {
 	border-radius: 0px; 
 }
 
 .btn-default {
     color: #ffffff;
-    background-color: #4aaaa5;
-    border: 1px solid #4aaaa5;
+    background-color: #efb11c;
+    border: 1px solid #efb11c;
 }
 
 .btn-default:hover {
@@ -348,7 +409,17 @@ label {
     background-color: #f5f5f5;
     border: 1px solid #4aaaa5;
 }
-*/
+
+.random-search-btn{
+	font-size: 1.2em;
+	height: 40px;
+	width: 200px;
+}
+
+
+
+
+
 
 /* @MEDIA QUERYS ===============================================================*/ 
 @media (max-width: 420px) {}
@@ -358,13 +429,10 @@ label {
 /* No media query since this is the default in Bootstrap */
 
 /* Small devices (tablets, 768px and up) */
-
 @media (min-width: @screen-sm-min) { }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) {
-	.content{
-	border: 1px solid blue;}}
+@media (min-width: @screen-md-min) {}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) {  }
@@ -373,18 +441,3 @@ label {
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { }
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { }
 @media (min-width: @screen-lg-min) { }
-
-@media (min-width: @screen-sm-min) {  }
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) {  }
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) {  }
-
-
-@media (max-width: @screen-xs-max) {  }
-@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { }
-@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {  }
-@media (min-width: @screen-lg-min) {  }
-
