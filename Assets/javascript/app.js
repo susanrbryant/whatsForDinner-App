@@ -32,9 +32,6 @@ function generateRecipe(){
         
                 $(".container-recipe-image").attr("src", recipesImage);
         
-
-                $("#recipe-title").empty().append(recipesTitle);
-                $("#recipe-url").empty().append(recipesURL);
                 for (var i = 0; i < randomArr.length; i++ ) {
                     recipesID = randomArr[i].recipe_id;
                     recipesImage = randomArr[i].image_url;
@@ -44,9 +41,13 @@ function generateRecipe(){
                     // $("#recipe-title").empty().append("Recipe: " + recipesTitle);
                 }
 
-                recipesURL.attr("src", sourceURL);
+                recipesURL.attr("href", sourceURL);
+                recipesURL.attr("target", "_blank");
                 recipesURL.text("Click here for the recipe!"); 
-                
+                $("#recipes-url").append(recipesURL);
+                console.log(recipesURL);
+                $("#recipe-title").empty().append(recipesTitle);
+
                 function image() {
                     var img = document.createElement("IMG");
                     img.src = recipesImage;
