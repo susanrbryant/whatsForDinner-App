@@ -17,7 +17,7 @@ function generateRecipe(){
             url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/search",
             type: "GET",
             data: {
-                key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
+                key: "51e4216e1838bb74cd755821cf711dd6",
                 sort: "t",
             }, 
             success: (function (result) {
@@ -30,13 +30,14 @@ function generateRecipe(){
                 var recipesImage = $("<img>");
         
                 $(".container-recipe-image").attr("src", recipesImage);
-                $("h2").empty().append(recipesTitle);
+                $("#recipe-title").empty().append(recipesTitle);
                 for (var i = 0; i < randomArr.length; i++ ) {
-                    // console.log(randomArr[i])
                     recipesID = randomArr[i].recipe_id;
                     recipesImage = randomArr[i].image_url;
-                    // console.log(randomArr[i].title);
-                    recipesTitle.html("Recipe: " + randomArr[i].title);
+                    recipesURL = randomArr[i].source_url;
+                    recipesTitle = randomArr[i].title;
+                    $("#recipeLink").innerHTML = recipesURL.toString();  
+                    $("#recipe-title").empty().append("Recipe: " + recipesTitle);
                 }
                 
                 function image() {
@@ -50,30 +51,22 @@ function generateRecipe(){
                     type:"GET",
                     url: "https://cors-anywhere.herokuapp.com/" + "http://food2fork.com/api/get",
                     data: {
-                        key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
+                        key: "51e4216e1838bb74cd755821cf711dd6",
                         rId: recipesID    
                     },
                     success: (function (result) {
-                        // console.log(result);
                         recipeArr = JSON.parse(result);
-                        // console.log(recipeArr);
                         ingrArr = recipeArr.recipe.ingredients;
-                        // console.log(ingrArr);
-                        console.log(ingrArr[6]);
-                    
-                        $(".ingredients").empty().prepend(ingrArr);
-                        $(".ingredients").html("ingredients: " + ingrArr);
-                        var ingrList = $("<ul>");
-                        for (var i=0; i < ingrArr.length; i++){
-                            $(".ingredients").html(ingrArr[i]); 
-                        }
-                        // for loop here
-                        // console.log(ingrList); 
-                        $(this).prepend("<span>" + ($(this).index() +1) + ".</span>");
-                        // $('ul > li').each(function() {
-                            
-                        // })
-                        
+ 
+                        $("#ingrButton").on("click", function(){
+                            //create a div that toggles classes to hide/show
+                            for (var i=0; i < ingrArr.length; i++){
+                                $("#ingredients").append( "<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
+                                // console.log(ingrArr);
+                                // console.log(groceryList);
+                                                   
+                             }
+                        })
                     })
                 })
             })
@@ -81,5 +74,4 @@ function generateRecipe(){
     });
 }
 generateRecipe();
-
 
