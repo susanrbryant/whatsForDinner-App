@@ -10,7 +10,6 @@
     
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	    
-        
     <!-- CSS --> 
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
         
@@ -39,32 +38,8 @@
 <body>
 
 
-<style>
-
-/* DEVELOPER HELPERS */
-.dev-box-blue{border: 1px solid BLUE;}
-
-.dev-box-green{border: 1px solid GREEN;}
-
-.dev-box-red{border: 1px solid RED;}
-
-.div[class*='col-'] {}
-
-.row{}
-
-.col-md-12{/*border: 1px solid blue;*/}
-
-.col-md-6{/*border: 1px solid orange;*/}
-
-.col-xs-12 {}
-
-/* END - DEVELOPER HELPERS */
-
-</style>
-
-
-
 <div class="wrapper">
+
 	<!-- HEADER -->
 	<header class="header">
 		<!-- NAVIGATION -->
@@ -103,43 +78,37 @@
 		</nav>
 	</header>            
 
-                
-<!-- HOME PAGE DESIGN -->                
-<div class="container-fluid intro">
-	<div class="container">
+    <!-- HOME PAGE DESIGN -->                
+    <div class="container-fluid intro">
+        <div class="container">
+        
+            <!-- INTRODUCTION -->
+            <div class="row introduction">
+                <div class="col-md-12">   
+                    
+                    <h1 class="random-recipe-title">Random Recipe Delights</h1>
+        
+                    <h3 class="random-whats-dinner">What's for dinner?</h3>
     
-		<!-- INTRODUCTION -->
-		<div class="row introduction">
-			<div class="col-md-12">   
-                
-                <h1 class="random-recipe-title">Random Recipe Delights</h1>
-	
-    			<h3 class="random-whats-dinner">What's for dinner?</h3>
-
-				<div class="row change-recipes">
-                	<div class="col-md-12">
-                    	<button id="randomButton" class="btn btn-default random-search-btn">
-                        	Random Delight
-                        </button>
+                    <div class="row change-recipes">
+                        <div class="col-md-12">
+                            <button id="randomButton" class="btn btn-default random-search-btn">
+                                Random Delight
+                            </button>
+                        </div>
                     </div>
-                </div>
-
-                </div>
-                </div>
     
-    
-    
-    </div>
-</div>           
-                
-                
+                </div>
+            </div>
+        
+        </div>
+    </div>           
                 
 	<!-- MAIN CONTAINER -->        
 	<div class="container">
 
 		<!-- CONTENT --> 
 		<div class="content">
-        
         
 			<!-- ROW - MAIN RECIPE -->
 			<div class="row main-content">
@@ -164,11 +133,8 @@
 				<!-- COLUMN 2 - TITLE - INGRENDIENTS --> 	           
 				<div class="col-xs-12 col-md-6 main-content-column">
                      
-					<!-- #main-content-col -->
 					<div id="main-content-col" class="container-recipe">
 
-
-						<!-- #recipe-title -->
 						<h2 id="recipe-title" class="recipe-title">
                         
 <!-- JS Title pulled in -->	
@@ -192,149 +158,138 @@
   
                         <h3 class="ingredients-title">Ingredients</h3>
 
-							<!-- #recipe-ingredients --> 
-                            <ul id="ingredients" class="ingredients">
-                            
-<!-- JS ingredients pulled in -->
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                
-                            </ul>
+                        <ul id="ingredients" class="ingredients">
                         
-                        </div>
+<!-- JS ingredients pulled in -->
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            
+                        </ul>
+                        
+					</div>
 
-
-                    </div>
-                    
 				</div>
-
+                    
 			</div> <!-- // .row.main-content --> 
 
-              
-              
-			<!-- THUMBNAILS ROW -->
-			<div class="row secondary-content">
+		</div> 
+
+        <!-- THUMBNAILS ROW -->
+        <div class="row secondary-content">
+        
+            <!-- THUMBNAIL 1 -->
+            <div class="col-xs-6 col-md-3">
+                
+                <div class="container-recipe-thumb">
+
+                    <p class="favorite text-right">
+                    
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        
+                    </p>
+                    
+                    <div class="container-recipe-image-thumb">
+                    
+                        <img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
+                        
+                    </div> 
+
+                    <p class="read-more">
+                        <a href="#" class="show-more">more ...</a>
+                    </p>
+
+                </div>
+                
+            </div>
             
-            	<!-- THUMBNAIL 1 -->
-				<div class="col-xs-6 col-md-3">
-                    
-					<div class="container-recipe-thumb">
-
-                        <p class="favorite text-right">
-                        
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-heart"></i>
-                            
-                        </p>
-                        
-                        <div class="container-recipe-image-thumb">
-                        
-                        	<img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
-                            
-                        </div> 
-
-                        <p class="read-more">
-                            <a href="#" class="show-more">more ...</a>
-                        </p>
-
-					</div>
-                    
-				</div>
+            <!-- THUMBNAIL 2 -->
+            <div class="col-xs-6 col-md-3">
                 
-            	<!-- THUMBNAIL 2 -->
-				<div class="col-xs-6 col-md-3">
+                <div class="container-recipe-thumb">
+
+                    <p class="favorite text-right">
                     
-					<div class="container-recipe-thumb">
-
-                        <p class="favorite text-right">
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
                         
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-heart"></i>
-                            
-                        </p>
-                        
-                        <div class="container-recipe-image-thumb">
-                        
-                        	<img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
-                            
-                        </div> 
-
-                        <p class="read-more">
-                            <a href="#" class="show-more">more ...</a>
-                        </p>
-
-					</div>
+                    </p>
                     
-				</div>
+                    <div class="container-recipe-image-thumb">
+                    
+                        <img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
+                        
+                    </div> 
+
+                    <p class="read-more">
+                        <a href="#" class="show-more">more ...</a>
+                    </p>
+
+                </div>
                 
-            	<!-- THUMBNAIL 3 -->
-				<div class="col-xs-6 col-md-3">
-                    
-					<div class="container-recipe-thumb">
-
-                        <p class="favorite text-right">
-                        
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-heart"></i>
-                            
-                        </p>
-                        
-                        <div class="container-recipe-image-thumb">
-                        
-                        	<img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
-                            
-                        </div> 
-
-                        <p class="read-more">
-                            <a href="#" class="show-more">more ...</a>
-                        </p>
-
-					</div>
-                    
-				</div>
-                
-            	<!-- THUMBNAIL 4 -->
-				<div class="col-xs-6 col-md-3">
-                    
-					<div class="container-recipe-thumb">
-
-                        <p class="favorite text-right">
-                        
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-heart"></i>
-                            
-                        </p>
-                        
-                        <div class="container-recipe-image-thumb">
-                        
-                        	<img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
-                            
-                        </div> 
-
-                        <p class="read-more">
-                            <a href="#" class="show-more">more ...</a>
-                        </p>
-
-					</div>
-                    
-				</div>
-
-			</div>
-			<!-- END THUMBNAILS ROW -->
-                
-
-
-		</div> <!-- // .content --> 
+            </div>
             
+            <!-- THUMBNAIL 3 -->
+            <div class="col-xs-6 col-md-3">
+                
+                <div class="container-recipe-thumb">
 
+                    <p class="favorite text-right">
+                    
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        
+                    </p>
+                    
+                    <div class="container-recipe-image-thumb">
+                    
+                        <img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
+                        
+                    </div> 
+
+                    <p class="read-more">
+                        <a href="#" class="show-more">more ...</a>
+                    </p>
+
+                </div>
+                
+            </div>
+            
+            <!-- THUMBNAIL 4 -->
+            <div class="col-xs-6 col-md-3">
+                
+                <div class="container-recipe-thumb">
+
+                    <p class="favorite text-right">
+                    
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        
+                    </p>
+                    
+                    <div class="container-recipe-image-thumb">
+                    
+                        <img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
+                        
+                    </div> 
+
+                    <p class="read-more">
+                        <a href="#" class="show-more">more ...</a>
+                    </p>
+
+                </div>
+                
+            </div>
+
+        </div> <!-- END THUMBNAILS ROW -->
+                
+            
 	</div> <!-- // CONTAINER -->
-
-
 
     <!-- FOOTER -->
 	<footer class="footer">
@@ -367,8 +322,6 @@
 </div> <!-- // WRAPPER -->
 
 
-
-
 	<!-- JAVASCRIPT FILES -->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -377,7 +330,7 @@
     
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     
 	<script type="text/javascript" src="assets/javascript/javascript.js"></script>
     
@@ -400,40 +353,25 @@
 				$('#scrolling').fadeOut(200);
 			}
 		});
-		
-		
+
+		/* WRAP EACH LETTER IN TO A SPAN in */
+		$('.random-recipe-title').each(function(){
+			$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+		});
+	
+		anime.timeline({loop: false}).add({
+			targets: '.random-recipe-title .letter',
+			opacity: [0,1],
+			easing: "easeInOutQuad",
+			duration: 2250,
+			delay: function(el, i) {
+				return 150 * (i+1)
+			}
+		});
 
 
-
-
-// Wrap every letter in a span
-$('.random-recipe-title').each(function(){
-  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-});
-
-anime.timeline({loop: false})
-  .add({
-    targets: '.random-recipe-title .letter',
-    opacity: [0,1],
-    easing: "easeInOutQuad",
-    duration: 2250,
-    delay: function(el, i) {
-      return 150 * (i+1)
-    }
-  })
-  /*.add({
-    targets: '.ml3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });*/
-		
-		
-		
-		
-		
-    </script>
+	</script>
+    
     
 </body>
 </html>
