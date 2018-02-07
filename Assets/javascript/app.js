@@ -6,7 +6,7 @@ var recipesArr = [];
 var ingrArr = [];
 var ingrList;
 var ingr;
-var recipeArr = []
+var recipeArr = [];
 
 
 function generateRecipe(){
@@ -28,17 +28,24 @@ function generateRecipe(){
 
                 var recipesTitle = $("<p>");
                 var recipesImage = $("<img>");
+                var recipesURL = $("<a>");
         
                 $(".container-recipe-image").attr("src", recipesImage);
+        
+
                 $("#recipe-title").empty().append(recipesTitle);
+                $("#recipe-url").empty().append(recipesURL);
                 for (var i = 0; i < randomArr.length; i++ ) {
                     recipesID = randomArr[i].recipe_id;
                     recipesImage = randomArr[i].image_url;
-                    recipesURL = randomArr[i].source_url;
+                    sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
-                    $("#recipeLink").innerHTML = recipesURL.toString();  
-                    $("#recipe-title").empty().append("Recipe: " + recipesTitle);
+                    // $("#recipeLink").innerHTML = recipesURL.toString();  
+                    // $("#recipe-title").empty().append("Recipe: " + recipesTitle);
                 }
+
+                recipesURL.attr("src", sourceURL);
+                recipesURL.text("Click here for the recipe!"); 
                 
                 function image() {
                     var img = document.createElement("IMG");
@@ -57,7 +64,7 @@ function generateRecipe(){
                     success: (function (result) {
                         recipeArr = JSON.parse(result);
                         ingrArr = recipeArr.recipe.ingredients;
- 
+                        console.log(typeof recipesID, recipesID);
                         $("#ingrButton").on("click", function(){
                             //create a div that toggles classes to hide/show
                             for (var i=0; i < ingrArr.length; i++){
@@ -66,7 +73,10 @@ function generateRecipe(){
                                 // console.log(groceryList);
                             }
                         })
-                    })
+                    }), 
+                    error: function(error) {
+                        console.log("error: " + error);
+                    }
                 })
             })
         });
