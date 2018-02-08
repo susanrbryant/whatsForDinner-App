@@ -506,7 +506,9 @@ footer {
 	  }
   }
 	
-
+.hide {
+	display: none; 
+}
 
 
 /* @MEDIA QUERYS */ 
