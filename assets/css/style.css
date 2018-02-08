@@ -1,33 +1,4 @@
 
-
-/* DEVELOPER HELPERS */
-.dev-box-blue{border: 1px solid BLUE;}
-
-.dev-box-green{border: 1px solid GREEN;}
-
-.dev-box-red{border: 1px solid RED;}
-
-.div[class*='col-'] {}
-
-.row{}
-
-.col-md-12{/*border: 1px solid blue;*/}
-
-.col-md-6{/*border: 1px solid orange;*/}
-
-.col-xs-12 {/*border: 1px solid GREEN;*/}
-
-/* END - DEVELOPER HELPERS */
-
-.container-fluid {
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-
-
 body {
 	/*font-family: 'Open Sans', sans-serif;*/
 	font-family: 'Montserrat', sans-serif;
@@ -62,7 +33,6 @@ a:hover {
 
 /* TYPOGRAHPY*/
 h1, h2, h3, h4, h5, h6 {
-	/*font-family: 'Georgia', Times, Times New Roman, serif;*/
 	font-family: 'Montserrat', sans-serif;
 	color: #4aaaa5;
 } 
@@ -98,6 +68,74 @@ p.favorite{
 	color: #efb11c;
 }
 
+.far.fa-heart{}
+.fas.fa-heart{}
+
+
+/* HEADER & NAVIGATION*/
+header, .navbar-default { 
+    background-color: #777777;
+	border-bottom: 1px solid #777777;
+	margin: 0px 0px 0px 0px;
+	-webkit-box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
+	-moz-box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
+	box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
+}
+
+/* BOOTSTRAP OVERRIDE */
+.navbar {
+	border-radius: 0px;
+    position: relative;
+    margin-bottom: 0px;
+    border: 0px solid transparent;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+}
+
+.navbar-header{
+	float: none;}
+
+
+.container-hamburger-menu{
+	float: left;
+}
+
+.container-logo{
+	float: right;
+}
+
+
+a.hamburger-menu{
+    font-size: 2.5em;
+    color: #ffffff;
+    padding: 15px;
+}
+
+a.hamburger-menu:hover {
+	font-size: 2.5em;
+	color: #4aaaa5;
+}
+
+/* LOGO */
+a.navbar-brand.logo {
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	text-decoration: none;
+	background-color: #4aaaa5; 
+	color: #ffffff; 
+	margin: 0px 10px 0px 10px;
+	-webkit-box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
+	-moz-box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
+	box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
+}
+	
+a.navbar-brand.logo:hover {
+	background-color: #dddddd;
+	color: #4aaaa5; 
+}
+
+/* NAV */
 .sidenav {
     height: 100%;
     width: 0;
@@ -143,76 +181,6 @@ p.favorite{
 }
 
 
-.far.fa-heart{}
-.fas.fa-heart{}
-
-
-
-/* HEADER & NAVIGATION*/
-header, .navbar-default { 
-    background-color: #777777;
-	border-bottom: 1px solid #777777;
-	margin: 0px 0px 0px 0px;
-	-webkit-box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
-	-moz-box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
-	box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
-}
-
-/* BOOTSTRAP OVERRIDE */
-.navbar {
-	border-radius: 0px;
-    position: relative;
-    margin-bottom: 0px;
-    border: 0px solid transparent;
-	border-top-color: transparent;
-	border-right-color: transparent;
-	border-bottom-color: transparent;
-	border-left-color: transparent;
-}
-
-.navbar-header{
-	float: none;}
-
-
-.container-hamburger-menu{
-	float: left;
-}
-
-.container-logo{
-	float: right;
-}
-
-
-
-a.hamburger-menu{
-    font-size: 2.5em;
-    color: #ffffff;
-    padding: 15px;
-}
-
-a.hamburger-menu:hover {
-	font-size: 2.5em;
-	color: #4aaaa5;
-}
-
-/* LOGO */
-a.navbar-brand.logo {
-	font-family: 'Georgia', Times, Times New Roman, serif;
-	text-decoration: none;
-	background-color: #4aaaa5; 
-	color: #ffffff; 
-	margin: 0px 10px 0px 10px;
-	-webkit-box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
-	-moz-box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
-	box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
-}
-	
-a.navbar-brand.logo:hover {
-	background-color: #dddddd;
-	color: #4aaaa5; 
-}
-
-
 /* CONTENT */
 .wrapper {
 	background-color: #E5E5E5;
@@ -231,11 +199,6 @@ a.navbar-brand.logo:hover {
 
 
 /* CONTAINERS */
-.container-fluid {}
-
-.content {}
-
-/* HOME */
 .intro{	background-image: url(../images/background.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -252,15 +215,24 @@ a.navbar-brand.logo:hover {
 	padding: 100px 0px 0px 0px;
 }
 
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .change-recipes{
 	border: 2px solid #777777;
 	width: 260px;
 	padding: 20px;
-	margin: 30px auto;}
+	margin: 30px auto;
+}
 
 .row.change-recipes .col-md-12{
 	padding-right: 0px; 
-	padding-left: 0px;}
+	padding-left: 0px;
+}
 
 
 .row.main-content {
@@ -295,11 +267,7 @@ a.navbar-brand.logo:hover {
 }
 
 
-.row.secondary-content{}
-
-
 /* IMAGES */
-
 .container-recipe-thumb {
 	border: 1px solid #dddddd;
 	padding: 5px 5px 5px 5px;
@@ -312,9 +280,6 @@ a.navbar-brand.logo:hover {
 	overflow: hidden;
 	position: relative;
 	max-height: 400px;
-	top: -75%;
-	/* clip: rect(60px, 60px, 60px, 60px); */
-	/* clip: rect(0px, 100px, 100px, 0px);	 */
 }
 
 
@@ -324,9 +289,6 @@ a.navbar-brand.logo:hover {
 	width: 100%;
 }
 
-.image-recipe {
-	
-}
 
 .container-recipe-image-thumb {
 	overflow: hidden;
@@ -452,9 +414,20 @@ footer {
 	width: 200px;
 }
 
+.btn-default-sm {
+    color: #4aaaa5;
+    background-color:#f5f5f5;
+    border: 1px solid #4aaaa5;
+}
 
-  
-  input {
+.btn-default-sm:hover {
+    color: #ffffff;
+    background-color: #efb11c;
+    border: 1px solid #efb11c;
+}
+
+
+input {
 	border: none;
 	display: block;
 	width: 45.0%;
@@ -462,32 +435,5 @@ footer {
 	padding: 8px 0 8px 10px;
 	border-bottom: 1px solid #cfcbcc;
 	outline:0;
-  }
+}
 	
-
-
-
-/* @MEDIA QUERYS */ 
-@media (max-width: 420px) {}
-
-@media (min-width: 421px) and (max-width: 767px) {}
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-
-@media (min-width: 768px) and (max-width: 992px) {}
-
-@media (min-width: 993px) and (max-width: 1200px) {}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) {}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) {  }
-
-@media (max-width: @screen-xs-max) { }
-@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { }
-@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { }
-@media (min-width: @screen-lg-min) { }
