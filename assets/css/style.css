@@ -314,7 +314,7 @@ nav .col-sm-2 {
 	position: relative;
 	top: -75%;
 	/* clip: rect(60px, 60px, 60px, 60px); */
-	clip: rect(0px, 100px, 100px, 0px);	
+	/* clip: rect(0px, 100px, 100px, 0px);	 */
 }
 
 

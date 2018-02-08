@@ -58,6 +58,7 @@ function generateRecipe(){
                 recipesURL.text("Click here for the recipe!"); 
                 $("#recipes-url").empty().append(recipesURL);
                 console.log(recipesURL);
+
                 $("#recipe-title").empty().append(recipesTitle);
 
                 function image() {
@@ -83,9 +84,7 @@ function generateRecipe(){
                                 for (var i=0; i < ingrArr.length; i++){
                                     console.log(ingrArr[i]);
                                     $("#ingredients").append( "<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
-
-                                    // console.log(groceryList);
-                                                    
+                                    // console.log(groceryList);                  
                                 }
                             }),
                         error: (function (error) {
