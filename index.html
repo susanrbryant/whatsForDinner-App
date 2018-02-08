@@ -40,6 +40,46 @@
 
     <div class="wrapper">
 
+	<!-- HEADER -->
+	<header class="header">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+            
+            	<div class="navbar-header">
+					<div class="container">
+                    
+                        <div class="container-hamburger-menu">
+                            <a href="#" class="hamburger-menu"><i class="fas fa-bars"></i></a>
+                        </div> 
+
+
+                        <div class="container-logo">
+                            <a href="#" class="navbar-brand logo">RRDelights</a>
+                        </div> 
+                        
+					</div>
+				</div>
+                    
+			</div>
+		</nav>
+	</header>            
+
+    <!-- HOME DESIGN -->                
+    <div class="container-fluid intro">
+        <div class="container">
+
+            <div class="row introduction">
+                <div class="col-md-12">   
+                    
+                    <h1 class="random-recipe-title">Random Recipe Delights</h1>
+        
+                    <h3 class="random-whats-dinner">What's for dinner?</h3>
+    
+                    <div class="row change-recipes">
+                        <div class="col-md-12">
+                            <button id="randomButton" class="btn btn-default random-search-btn">
+                                Random Delight
+                            </button>
         <!-- HEADER -->
         <header class="header">
             <!-- NAVIGATION -->
@@ -140,6 +180,7 @@
 
                                 <!-- JS Image pulled in on the *** CLASS ? *** -->
 
+
                                 <img href="javascript:image();" alt="Recipe Image" title="Recipe Image" id="image-recipe" class="image-recipe">
 
                             </div>
@@ -173,12 +214,15 @@
 
                         </div>
 
-                    </div>
+                    </div> <!-- END COLUMN 2 - TITLE - INGRENDIENTS -->
 
                 </div>
                 <!-- // .row.main-content -->
 
             </div>
+            
+
+
 
             <div class="container">
 
@@ -188,11 +232,43 @@
                 <ul id="list"></ul>
 
             </div>
+            
+
+                
+
 
             <!-- THUMBNAILS ROW -->
             <div class="row secondary-content">
 
-                <div class="col-xs-6 col-md-3">
+                <!-- THUMBNAIL 1 -->
+                <div class="col-xs-6 col-sm-3 col-md-3">
+
+                        <div class="container-recipe-thumb">
+    
+                            <p class="favorite text-right">
+    
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+    
+                            </p>
+    
+                            <div class="container-recipe-image-thumb">
+    
+                                <img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
+    
+                            </div>
+    
+                            <p class="read-more">
+                                <a href="#" class="show-more">more ...</a>
+                            </p>
+    
+                        </div>
+    
+                    </div>
+
+
+                <!-- THUMBNAIL 2 -->
+                <div class="col-xs-6 col-sm-3 col-md-3">
 
                     <div class="container-recipe-thumb">
 
@@ -217,7 +293,9 @@
 
                 </div>
 
-                <div class="col-xs-6 col-md-3">
+
+                <!-- THUMBNAIL 3 -->
+                <div class="col-xs-6 col-sm-3 col-md-3">
 
                     <div class="container-recipe-thumb">
 
@@ -242,7 +320,8 @@
 
                 </div>
 
-                <div class="col-xs-6 col-md-3">
+                <!-- THUMBNAIL 4 -->
+                <div class="col-xs-6 col-sm-3 col-md-3">
 
                     <div class="container-recipe-thumb">
 
@@ -266,35 +345,19 @@
                     </div>
 
                 </div>
+            </div>        
+         
+			<!-- TOP OF PAGE LINK - SCROLLING -->
+			<a id="scrolling" href="#top">
+				<i class="fas fa-angle-up"></i>
+			</a>
 
-                <div class="col-xs-6 col-md-3">
-
-                    <div class="container-recipe-thumb">
-
-                        <p class="favorite text-right">
-
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-heart"></i>
-
-                        </p>
-
-                        <div class="container-recipe-image-thumb">
-
-                            <img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
-
-                        </div>
-
-                        <p class="read-more">
-                            <a href="#" class="show-more">more ...</a>
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            -->
+			<div class="col-xs-12 col-sm-6"> 
+				<div class="copyright">
+					Copyright &copy; <script>document.write(new Date().getFullYear());		</script> by Susan R Bryant, Krista, Andrew
+				</div>
+			</div>
+            
         </div>
         <!-- // CONTAINER -->
 
