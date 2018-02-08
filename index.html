@@ -42,47 +42,32 @@
 
 	<!-- HEADER -->
 	<header class="header">
-		<!-- NAVIGATION -->
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
             
             	<div class="navbar-header">
-					<!--
-					<button type="button" class="collapsed navbar-toggle" data-toggle="collapse" 
-                            data-target="#bs-example-navbar-collapse-5" aria-expanded="false">
-                        
-                    <span class="sr-only">Toggle navigation</span>
+					<div class="container">
                     
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    
-                    </button> 
-                    -->
+                        <div class="container-hamburger-menu">
+                            <a href="#" class="hamburger-menu"><i class="fas fa-bars"></i></a>
+                        </div> 
+
+
+                        <div class="container-logo">
+                            <a href="#" class="navbar-brand logo">RRDelights</a>
+                        </div> 
                         
-                    <div class="container container-logo">
-                        <a href="#" class="navbar-brand logo">RRDelights</a>
-                    </div> 
-                        
+					</div>
 				</div>
-                
-				<!--<div class="collapse navbar-collapse dev-box-green">
-                    <a href="#" class="search">
-                        <p class="navbar-text navbar-right">
-                            <i class="fas fa-search"></i>
-                        </p>
-                    </a>
-				</div>-->
                     
 			</div>
 		</nav>
 	</header>            
 
-    <!-- HOME PAGE DESIGN -->                
+    <!-- HOME DESIGN -->                
     <div class="container-fluid intro">
         <div class="container">
-        
-            <!-- INTRODUCTION -->
+
             <div class="row introduction">
                 <div class="col-md-12">   
                     
@@ -103,7 +88,8 @@
         
         </div>
     </div>           
-                
+
+     
 	<!-- MAIN CONTAINER -->        
 	<div class="container">
 
@@ -114,7 +100,7 @@
 			<div class="row main-content">
 
 				<!-- COLUMN 1 - IMAGE --> 
-				<div class="col-xs-12 col-md-6 main-content-column">
+				<div class="col-xs-12 col-sm-6 main-content-column">
                      
 					<div class="container-recipe">
                     
@@ -122,6 +108,11 @@
 
 <!-- JS Image pulled in on the *** CLASS ? *** -->
                             
+                            
+<!-- TESTING -->
+<img src="assets/images/avocadomacandcheesedc99.jpg" alt="Recipe Image" title="Recipe Image" 
+id="image-recipe" class="image-recipe img-responsive">
+
 							<img href="javascript:image();" alt="Recipe Image" title="Recipe Image" id="image-recipe" class="image-recipe">
 
 						</div>
@@ -131,7 +122,7 @@
 				</div>
 
 				<!-- COLUMN 2 - TITLE - INGRENDIENTS --> 	           
-				<div class="col-xs-12 col-md-6 main-content-column">
+				<div class="col-xs-12 col-sm-6 main-content-column">
                      
 					<div id="main-content-col" class="container-recipe">
 
@@ -139,7 +130,8 @@
                         
 <!-- JS Title pulled in -->	
                             
-                        </h2>   
+                        </h2>
+                           
                         <div id="recipes-url"></div>
                              
 <!-- I DONT THINK WE ARE USING RECIPE -->
@@ -158,19 +150,18 @@
 <!-- // I DONT THINK WE ARE USING RECIPE --> 
   
                         <h3 class="ingredients-title">Ingredients</h3>
-
-                        <ul id="ingredients" class="ingredients">
+                    
+                        <button id="ingrButton" class="btn btn-default-sm">Grocery List</button>
                         
-<!-- JS ingredients pulled in -->
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                        <div id="groceryList">
+                            <ul id="ingredients" class="ingredients">
                             
-                        </ul>
+<!-- JS ingredients pulled in -->
+                                <li></li>
+                                <li></li>
+                                
+                            </ul>
+                        </div>
                         
 					</div>
 
@@ -184,7 +175,7 @@
         <div class="row secondary-content">
         
             <!-- THUMBNAIL 1 -->
-            <div class="col-xs-6 col-md-3">
+            <div class="col-xs-6 col-sm-3 col-md-3">
                 
                 <div class="container-recipe-thumb">
 
@@ -210,7 +201,7 @@
             </div>
             
             <!-- THUMBNAIL 2 -->
-            <div class="col-xs-6 col-md-3">
+            <div class="col-xs-6 col-sm-3 col-md-3">
                 
                 <div class="container-recipe-thumb">
 
@@ -236,7 +227,7 @@
             </div>
             
             <!-- THUMBNAIL 3 -->
-            <div class="col-xs-6 col-md-3">
+            <div class="col-xs-6 col-sm-3 col-md-3">
                 
                 <div class="container-recipe-thumb">
 
@@ -262,7 +253,7 @@
             </div>
             
             <!-- THUMBNAIL 4 -->
-            <div class="col-xs-6 col-md-3">
+            <div class="col-xs-6 col-sm-3 col-md-3">
                 
                 <div class="container-recipe-thumb">
 
@@ -310,7 +301,7 @@
 				<i class="fas fa-angle-up"></i>
 			</a>
 
-			<div class="col-xs-12 col-md-6"> 
+			<div class="col-xs-12 col-sm-6"> 
 				<div class="copyright">
 					Copyright &copy; <script>document.write(new Date().getFullYear());		</script> by Susan R Bryant, Krista, Andrew
 				</div>

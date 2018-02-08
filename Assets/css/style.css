@@ -15,11 +15,16 @@
 
 .col-md-6{/*border: 1px solid orange;*/}
 
-.col-xs-12 {}
+.col-xs-12 {/*border: 1px solid GREEN;*/}
 
 /**** END - DEVELOPER HELPERS ***************************/
 
-
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 
 
@@ -101,7 +106,7 @@ p.favorite{
 /* HEADER & NAVIGATION ========================================================= */
 header, .navbar-default { 
     background-color: #777777;
-	border-bottom: 2px solid #444444;
+	border-bottom: 1px solid #777777;
 	margin: 0px 0px 0px 0px;
 	-webkit-box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
 	-moz-box-shadow: 0px 5px 11px -5px rgba(51,51,51,1);
@@ -112,8 +117,6 @@ header, .navbar-default {
 .navbar {
 	border-radius: 0px;
     position: relative;
-    /*min-height: 50px;*/
-    /*margin-bottom: 20px;*/
     margin-bottom: 0px;
     border: 0px solid transparent;
 	border-top-color: transparent;
@@ -122,59 +125,47 @@ header, .navbar-default {
 	border-left-color: transparent;
 }
 
+.navbar-header{
+	float: none;}
+
+
+.container-hamburger-menu{
+	float: left;
+}
+
+.container-logo{
+	float: right;
+}
+
+
+
+a.hamburger-menu{
+    font-size: 2.5em;
+    color: #ffffff;
+    padding: 15px;
+}
+
+a.hamburger-menu:hover {
+	font-size: 2.5em;
+	color: #4aaaa5;
+}
 
 /* LOGO */
-a.navbar-brand.logo{
+a.navbar-brand.logo {
 	font-family: 'Georgia', Times, Times New Roman, serif;
 	text-decoration: none;
 	background-color: #4aaaa5; 
 	color: #ffffff; 
 	margin: 0px 10px 0px 10px;
+	-webkit-box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
+	-moz-box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
+	box-shadow: 0px 5px 7px -5px rgba(74,170,165,1);
 }
 	
-/* NOT USING AT THE MOMENT
-a.navbar-brand.logo:link {color: #ffffff;}
-a.navbar-brand.logo:visited {color: #ffffff;}
 a.navbar-brand.logo:hover {
 	background-color: #dddddd;
-	color: #4aaaa5;
+	color: #4aaaa5; 
 }
-
-a.navbar-brand.logo:active {color: #ffffff;}
-*/
-
-/* NOT USING AT THE MOMENT
-
-nav {
-	margin-bottom: -5px;
-}
-
-.col-xs-4 .nav-link {
-	padding: 7px 0px;
-    width: 100%;
-    display: inline-block;
-    font-size: 17px;
-    border-bottom: 4px solid transparent;
-    margin-bottom: -4px;
-}
-
-.col-sm-2 .nav-link {
-	padding: 15px 0px;
-}
-	
-a.nav-link:hover { 
-	border-bottom: 4px solid #4aaaa5;
-}	
-	
-nav .col-sm-2 {	
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-.nav-link.active{
-	border-bottom: 4px solid #666666;
-}
-*/
 
 
 /* CONTENT ===================================================================== */
@@ -203,12 +194,18 @@ nav .col-sm-2 {
 .intro{	background-image: url(../images/background.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin-bottom: 50px;}
+	margin-bottom: 50px;
+	border-bottom: 2px solid #dddddd;
+	-webkit-box-shadow: 0px 5px 11px -5px rgba(221,221,221,1);
+	-moz-box-shadow: 0px 5px 11px -5px rgba(221,221,221,1);
+	box-shadow: 0px 5px 5px -5px rgba(221,221,221,1);
+}
 
 .introduction{
 	height: 500px;
 	text-align: center;
-	padding: 100px 0px 0px 0px;}
+	padding: 100px 0px 0px 0px;
+}
 
 .change-recipes{
 	border: 2px solid #777777;
@@ -242,20 +239,21 @@ nav .col-sm-2 {
 }
 
 .container-recipe{ 
-	/*background-color: #ffffff;*/
-	
 	background-color: #f8f8f8;
-	padding: 15px 15px 15px 15px;
-	/*margin: 10% 10% 10% 10%; */
-	width: 90%;
-	   
+	padding: 7px;
+	width: 100%;
     border: 1px solid #dddddd;
-    border-radius: 4px;
+    border-radius: 0;
     -webkit-transition: border .2s ease-in-out;
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
 }
 
+
+.row.secondary-content{}
+
+
+/* IMAGES ====================================================================== */
 
 .container-recipe-thumb {
 	border: 1px solid #dddddd;
@@ -264,28 +262,18 @@ nav .col-sm-2 {
 }
 
 
-.container-recipe-image > img{
-	left: -50%;
-	position: relative;
-	top: -75%;
-	/* clip: rect(60px, 60px, 60px, 60px); */
-	clip: rect(0px, 100px, 100px, 0px);	
-}
-
-
-
-.row.secondary-content{}
-
-
-
-/* IMAGES ====================================================================== */
 .container-recipe-image {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
-	height: 70%;
-	max-height: 300px;
-	clip: rect(0px, 0px, 400px, 400px);
+	max-height: 400px;
+}
+
+
+.container-recipe-image > img{
+	position: relative;
+	top: -50px;
+	width: 100%;
 }
 
 .image-recipe {
@@ -293,19 +281,19 @@ nav .col-sm-2 {
 }
 
 .container-recipe-image-thumb {
-	
+	overflow: hidden;
 }
 
 .image-recipe-thumb {
 	width: 100%;
 }
 
+
 /* CONTENT ===================================================================== */
 ul.ingredients,
 ul.recipe {
 	padding: 0px 0px 0px 0px; 
 }
-
 
 
 /* TOP OF PAGE LINK - SCROLLING ================================================ */	
@@ -417,6 +405,17 @@ footer {
 }
 
 
+.btn-default-sm {
+    color: #4aaaa5;
+    background-color:#f5f5f5;
+    border: 1px solid #4aaaa5;
+}
+
+.btn-default-sm:hover {
+    color: #ffffff;
+    background-color: #efb11c;
+    border: 1px solid #efb11c;
+}
 
 
 
@@ -424,12 +423,16 @@ footer {
 /* @MEDIA QUERYS ===============================================================*/ 
 @media (max-width: 420px) {}
 
-@media (max-width: 768px) {}
+@media (min-width: 421px) and (max-width: 767px) {}
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
+@media (min-width: 768px) and (max-width: 992px) {}
+
+@media (min-width: 993px) and (max-width: 1200px) {}
+
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { }
+@media (min-width: @screen-sm-min) {}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md-min) {}
