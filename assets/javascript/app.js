@@ -124,7 +124,6 @@ function generateRecipe(){
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
-                                //create a div that toggles classes to hide/show
 
                             for (var i=0; i < ingrArr.length; i++){
                                 // console.log(ingrArr[i]);
@@ -134,7 +133,6 @@ function generateRecipe(){
                             $("#showGroceryList").on("click", function() {
                                 $("#fullGroceryList").toggleClass("hide");
                                 // console.log(ingrArr);
-
                             })
 
                             $(".fa-heart").on("click", function() {
@@ -144,7 +142,6 @@ function generateRecipe(){
                                     $("#fullGroceryList").append(ingrList);
                                     console.log(ingrList);
                                 }
-                            //    $(this).toggleClass(".hide");
                             })
                         }),
                         error: (function (error) {
