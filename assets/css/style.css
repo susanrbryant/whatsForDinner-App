@@ -34,6 +34,7 @@ body {
 	color: #777777;
 	font-size: 14px;
 	margin: 0 auto;
+	background-color .5s;
 }
 
 ol, ul {
@@ -95,6 +96,50 @@ h3.random-whats-dinner {
 
 p.favorite{
 	color: #efb11c;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 
@@ -185,7 +230,7 @@ a.navbar-brand.logo:hover {
 }
 
 
-/* CONTAINERS ================================================================== */
+/* CONTAINERS */
 .container-fluid {}
 
 .content {}
@@ -267,6 +312,9 @@ a.navbar-brand.logo:hover {
 	overflow: hidden;
 	position: relative;
 	max-height: 400px;
+	top: -75%;
+	/* clip: rect(60px, 60px, 60px, 60px); */
+	/* clip: rect(0px, 100px, 100px, 0px);	 */
 }
 
 
@@ -405,18 +453,17 @@ footer {
 }
 
 
-.btn-default-sm {
-    color: #4aaaa5;
-    background-color:#f5f5f5;
-    border: 1px solid #4aaaa5;
-}
-
-.btn-default-sm:hover {
-    color: #ffffff;
-    background-color: #efb11c;
-    border: 1px solid #efb11c;
-}
-
+  
+  input {
+	border: none;
+	display: block;
+	width: 45.0%;
+	line-height: 1.5;
+	padding: 8px 0 8px 10px;
+	border-bottom: 1px solid #cfcbcc;
+	outline:0;
+  }
+	
 
 
 
