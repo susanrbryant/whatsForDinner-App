@@ -463,6 +463,48 @@ footer {
 	border-bottom: 1px solid #cfcbcc;
 	outline:0;
   }
+
+  ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+	  color: #899098;
+	  font-weight: 400;
+	  border-bottom: 1px solid #cfcbcc;
+	  line-height: 1.5;
+	  padding: 8px 0;
+	  &:before {
+		content: "\25A1";
+		padding: 10px 10px;
+		font-size: 20px;
+	  }
+	  &:hover {
+		text-decoration: line-through;
+		cursor: pointer;
+	  }
+	  &:last-child {
+		border-bottom: none;
+	  }
+	} 
+  }
+  
+  .checked {
+	color:green;
+	  &:before {
+		content: "\2713";
+		padding: 10px 10px;
+		font-size: 20px;
+	  }
+	  &:hover {
+		text-decoration: none;
+		&:after {
+		  content: "(remove)";
+		  color: tomato;
+		  text-align: right;
+		}
+	  }
+  }
 	
 
 
