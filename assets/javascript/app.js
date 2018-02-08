@@ -114,8 +114,6 @@ function generateRecipe(){
                 image();
 
                 $("#ingrButton").on("click", function() {
-                    $("#ingredients").show();
-                    
                     $.ajax({
                         type:"GET",
                         url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/get",
@@ -134,13 +132,11 @@ function generateRecipe(){
                                     $("#ingredients").append( "<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
                                 }
 
-                                var groceryList = $("<div>");
                                 // groceryList.attr("class", "hide");
                                 console.log(typeof groceryList);
-                                groceryList.html("demo here");
 
                                 $(".fa-heart").on("click", function() {
-                                    $("#ingredients").hide();
+                                    $("#fullGroceryList").hide();
                                 //    $(this).toggleClass(".hide");
                                 })
                             }),
@@ -149,15 +145,21 @@ function generateRecipe(){
                         })
                     })
                 });
-       
             }),
             error: (function (error) {
                 console.log(error);
             })
         });
+
     });
 }
 generateRecipe();
+
+$("#showGroceryList").on("click", function() {
+    $("#fullGroceryList").toggleClass("hide");
+    console.log("hey this works");
+
+})
 
     // $(document).ready(function(){
     //  $('#randomButton').trigger('click');
