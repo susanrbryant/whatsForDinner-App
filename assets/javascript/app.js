@@ -8,6 +8,18 @@ var ingrList;
 var ingr;
 var recipeArr = [];
 
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+
 
 function generateRecipe(){
     $("#randomButton").on("click", function(){
@@ -71,8 +83,7 @@ function generateRecipe(){
                                 //create a div that toggles classes to hide/show
                                 for (var i=0; i < ingrArr.length; i++){
                                     console.log(ingrArr[i]);
-                                    $("#ingredients").append( "<li>" + (i+1) + ". " + ingrArr[i]+ "</li>");
-
+                                    $("#ingredients").append( "<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
                                     // console.log(groceryList);                  
                                 }
                             }),
