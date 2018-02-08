@@ -464,7 +464,9 @@ footer {
 	outline:0;
   }
 	
-
+.hide {
+	display: none; 
+}
 
 
 /* @MEDIA QUERYS */ 
