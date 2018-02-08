@@ -215,33 +215,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <script type="text/javascript">
-        // $(document).ready(function(){
-        //  $('#randomButton').trigger('click');
-        // }); 
-        /* TOP OF PAGE LINK - SCROLLING */
-        $(window).scroll(function () {
-            if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
-                $('#scrolling').fadeIn(200);
-            } else {
-                $('#scrolling').fadeOut(200);
-            }
-        });
-        /* WRAP EACH LETTER IN TO A SPAN in */
-        $('.random-recipe-title').each(function () {
-            $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-        });
-        anime.timeline({ loop: false }).add({
-            targets: '.random-recipe-title .letter',
-            opacity: [0, 1],
-            easing: "easeInOutQuad",
-            duration: 2250,
-            delay: function (el, i) {
-                return 150 * (i + 1)
-            }
-        });
-    </script>
 </body>
 </html>

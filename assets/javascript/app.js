@@ -102,3 +102,28 @@ function generateRecipe(){
 }
 generateRecipe();
 
+    // $(document).ready(function(){
+    //  $('#randomButton').trigger('click');
+    // }); 
+    /* TOP OF PAGE LINK - SCROLLING */
+    
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
+            $('#scrolling').fadeIn(200);
+        } else {
+            $('#scrolling').fadeOut(200);
+        }
+    });
+    /* WRAP EACH LETTER IN TO A SPAN in */
+    $('.random-recipe-title').each(function () {
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
+    anime.timeline({ loop: false }).add({
+        targets: '.random-recipe-title .letter',
+        opacity: [0, 1],
+        easing: "easeInOutQuad",
+        duration: 2250,
+        delay: function (el, i) {
+            return 150 * (i + 1)
+        }
+    });
