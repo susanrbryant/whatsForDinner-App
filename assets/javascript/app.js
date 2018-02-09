@@ -60,7 +60,7 @@ function closeNav() {
       }
     }
     getValues();
-  })();
+  });
 
 
 function generateRecipe(){
@@ -94,8 +94,6 @@ function generateRecipe(){
                     recipesImage = randomArr[i].image_url;
                     sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
-                    // $("#recipeLink").innerHTML = recipesURL.toString();  
-                    // $("#recipe-title").empty().append("Recipe: " + recipesTitle);
                 }
 
                 recipesURL.attr("href", sourceURL);
@@ -128,12 +126,7 @@ function generateRecipe(){
                             for (var i=0; i < ingrArr.length; i++){
                                 // console.log(ingrArr[i]);
                                 $("#ingredients").append("<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
-                            }
-                                
-                            $("#showGroceryList").on("click", function() {
-                                $("#fullGroceryList").toggleClass("hide");
-                                // console.log(ingrArr);
-                            })
+                            } 
 
                             $(".fa-heart").on("click", function() {
                                 for (var i=0; i < ingrArr.length; i++){
@@ -142,6 +135,11 @@ function generateRecipe(){
                                     $("#fullGroceryList").append(ingrList);
                                     console.log(ingrList);
                                 }
+                            })
+
+                            $("#showGroceryList").on("click", function() {
+                                $("#fullGroceryList").toggleClass("hide");
+                                // console.log(ingrArr);
                             })
                         }),
                         error: (function (error) {
