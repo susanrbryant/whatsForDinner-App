@@ -137,11 +137,11 @@ function generateRecipe(){
                 },false)
                 
                 function store() {
-                  window.recipesURL .myitems = list.innerHTML;
+                  window.recipesURL.myitems = list.innerHTML;
                 }
                 
                 function getValues() {
-                  var storedValues = window.recipesURL .myitems;
+                  var storedValues = window.recipesURL.myitems;
                   if(!storedValues) {
                     list.innerHTML = '<li>Make a to do list</li>'+
                                      '<li>Check off first thing on the to do list</li>'+
