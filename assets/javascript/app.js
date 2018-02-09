@@ -22,7 +22,47 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
 }
 
-
+(function(){
+  
+    var list = document.querySelector('#list'),
+        form = document.querySelector('form'),
+        item = document.querySelector('#item');
+    
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      list.innerHTML += '<li>' + item.value + '</li>';
+      store();
+      item.value = "";
+    },false)
+    
+    list.addEventListener('click',function(e){
+      var t = e.target;
+      if(t.classList.contains('checked')){
+        t.parentNode.removeChild(t);
+      } else {
+        t.classList.add('checked');
+      }
+      store();
+    },false)
+    
+    function store() {
+      window.localStorage.myitems = list.innerHTML;
+    }
+    
+    function getValues() {
+      var storedValues = window.localStorage.myitems;
+      if(!storedValues) {
+        list.innerHTML = '<li>Make a to do list</li>'+
+                         '<li>Check off first thing on the to do list</li>'+
+                         '<li>Realize you have already accomplished 2 things in the list</li>'+
+                         '<li>Reward yourself with a nap</li>';
+      }
+      else {
+        list.innerHTML = storedValues;
+      }
+    }
+    getValues();
+  });
 
 
 function generateRecipe(){
@@ -56,8 +96,6 @@ function generateRecipe(){
                     recipesImage = randomArr[i].image_url;
                     sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
-                    // $("#recipeLink").innerHTML = recipesURL.toString();  
-                    // $("#recipe-title").empty().append("Recipe: " + recipesTitle);
                 }
 
                 recipesURL.attr("href", sourceURL);
@@ -75,47 +113,46 @@ function generateRecipe(){
                 }
                 image();
 
-                (function(){
-  
-                    var list = document.querySelector('#list'),
-                    form = document.querySelector('form'),
-                    item = document.querySelector('#item');
+            //     (function(){
+            //         var list = document.querySelector('#list'),
+            //         form = document.querySelector('form'),
+            //         item = document.querySelector('#item');
                     
-                form.addEventListener('submit',function(e){
-                  e.preventDefault();
-                list.innerHTML += '<li>' + item.value + recipesURL  + '</li>';
-                  store();
-                  item.value = "";
-                },false)
+            //     form.addEventListener('submit',function(e){
+            //       e.preventDefault();
+            //     list.innerHTML += '<li>' + item.value + recipesURL  + '</li>';
+            //       store();
+            //       item.value = "";
+            //     },false)
                 
-                list.addEventListener('click',function(e){
-                  var t = e.target;
-                  if(t.classList.contains('checked')){
-                    t.parentNode.removeChild(t);
-                  } else {
-                    t.classList.add('checked');
-                  }
-                  store();
-                },false)
+            //     list.addEventListener('click',function(e){
+            //       var t = e.target;
+            //       if(t.classList.contains('checked')){
+            //         t.parentNode.removeChild(t);
+            //       } else {
+            //         t.classList.add('checked');
+            //       }
+            //       store();
+            //     },false)
                 
-                function store() {
-                  window.recipesURL.myitems = list.innerHTML;
-                }
+            //     function store() {
+            //       window.recipesURL.myitems = list.innerHTML;
+            //     }
                 
-                function getValues() {
-                  var storedValues = window.recipesURL.myitems;
-                  if(!storedValues) {
-                    list.innerHTML = '<li>Make a to do list</li>'+
-                                     '<li>Check off first thing on the to do list</li>'+
-                                     '<li>Realize you have already accomplished 2 things in the list</li>'+
-                                     '<li>Reward yourself with a nap</li>';
-                  }
-                  else {
-                    list.innerHTML = storedValues;
-                  }
-                }
-                getValues();
-              })();
+            //     function getValues() {
+            //       var storedValues = window.recipesURL.myitems;
+            //       if(!storedValues) {
+            //         list.innerHTML = '<li>Make a to do list</li>'+
+            //                          '<li>Check off first thing on the to do list</li>'+
+            //                          '<li>Realize you have already accomplished 2 things in the list</li>'+
+            //                          '<li>Reward yourself with a nap</li>';
+            //       }
+            //       else {
+            //         list.innerHTML = storedValues;
+            //       }
+            //     }
+            //     getValues();
+            //   })();
 
                 $("#ingrButton").on("click", function() {
                     $.ajax({
@@ -128,16 +165,13 @@ function generateRecipe(){
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
+                            $("#ingreTitle").toggleClass("hide");
+                            $("#ingrTitle").html("Ingredients: ");
 
                             for (var i=0; i < ingrArr.length; i++){
-                                // console.log(ingrArr[i]);
                                 $("#ingredients").append("<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
-                            }
-                                
-                            $("#showGroceryList").on("click", function() {
-                                $("#fullGroceryList").toggleClass("hide");
-                                // console.log(ingrArr);
-                            })
+                            } 
+
 
                             $(".fa-heart").on("click", function() {
                                 for (var i=0; i < ingrArr.length; i++){
@@ -145,7 +179,18 @@ function generateRecipe(){
                                     ingrList = "<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>"; 
                                     $("#fullGroceryList").append(ingrList);
                                     console.log(ingrList);
+
+                                    var input = $("#savedGroceryList");
+                                    localStorage.setItem("server", input.value);
                                 }
+                            })
+
+                            $("#showGroceryList").on("click", function() {
+                                $("#fullGroceryList").toggleClass("hide");
+                                // console.log(ingrArr);
+                                var storedValue = localStorage.getItem("server");
+                                console.log(storedValue);
+
                             })
                         }),
                         error: (function (error) {
