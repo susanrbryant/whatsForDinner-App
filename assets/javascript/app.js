@@ -23,14 +23,12 @@ function closeNav() {
 }
 
 
-
-
 function generateRecipe(){
     $("#randomButton").on("click", function(){
         // var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
         // var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=" + recipesID;    
         
-        $("#ingredients").empty();
+        // $("#ingredients").empty();
 
         $.ajax({
             url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/search",
@@ -56,8 +54,6 @@ function generateRecipe(){
                     recipesImage = randomArr[i].image_url;
                     sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
-                    // $("#recipeLink").innerHTML = recipesURL.toString();  
-                    // $("#recipe-title").empty().append("Recipe: " + recipesTitle);
                 }
 
                 recipesURL.attr("href", sourceURL);
@@ -75,48 +71,48 @@ function generateRecipe(){
                 }
                 image();
 
-                (function(){
-  
-                    var list = document.querySelector('#list'),
-                    form = document.querySelector('form'),
-                    item = document.querySelector('#item');
+            //     (function(){
+            //         var list = document.querySelector('#list'),
+            //         form = document.querySelector('form'),
+            //         item = document.querySelector('#item');
                     
-                form.addEventListener('submit',function(e){
-                  e.preventDefault();
-                list.innerHTML += '<li>' + item.value + recipesURL  + '</li>';
-                  store();
-                  item.value = "";
-                },false)
+            //     form.addEventListener('submit',function(e){
+            //       e.preventDefault();
+            //     list.innerHTML += '<li>' + item.value + recipesURL  + '</li>';
+            //       store();
+            //       item.value = "";
+            //     },false)
                 
-                list.addEventListener('click',function(e){
-                  var t = e.target;
-                  if(t.classList.contains('checked')){
-                    t.parentNode.removeChild(t);
-                  } else {
-                    t.classList.add('checked');
-                  }
-                  store();
-                },false)
+            //     list.addEventListener('click',function(e){
+            //       var t = e.target;
+            //       if(t.classList.contains('checked')){
+            //         t.parentNode.removeChild(t);
+            //       } else {
+            //         t.classList.add('checked');
+            //       }
+            //       store();
+            //     },false)
                 
-                function store() {
-                  window.recipesURL.myitems = list.innerHTML;
-                }
+            //     function store() {
+            //       window.recipesURL.myitems = list.innerHTML;
+            //     }
                 
-                function getValues() {
-                  var storedValues = window.recipesURL.myitems;
-                  if(!storedValues) {
-                    list.innerHTML = '<li>Make a to do list</li>'+
-                                     '<li>Check off first thing on the to do list</li>'+
-                                     '<li>Realize you have already accomplished 2 things in the list</li>'+
-                                     '<li>Reward yourself with a nap</li>';
-                  }
-                  else {
-                    list.innerHTML = storedValues;
-                  }
-                }
-                getValues();
-              })();
+            //     function getValues() {
+            //       var storedValues = window.recipesURL.myitems;
+            //       if(!storedValues) {
+            //         list.innerHTML = '<li>Make a to do list</li>'+
+            //                          '<li>Check off first thing on the to do list</li>'+
+            //                          '<li>Realize you have already accomplished 2 things in the list</li>'+
+            //                          '<li>Reward yourself with a nap</li>';
+            //       }
+            //       else {
+            //         list.innerHTML = storedValues;
+            //       }
+            //     }
+            //     getValues();
+            //   })();
 
+                // $("#ingrButton").on("click", function() {
                 $("#ingrButton").on("click", function() {
                     $.ajax({
                         type:"GET",
@@ -128,25 +124,32 @@ function generateRecipe(){
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
+                            // $("#ingrTitle").toggleClass("hide");
+                            // $("#ingrTitle").html("Ingredients: ");
+
+                            $(".fas fa-heart").on("click", function() {
+                                // add recipe title and url to local storage nav bar
+                            })
 
                             for (var i=0; i < ingrArr.length; i++){
-                                // console.log(ingrArr[i]);
-                                $("#ingredients").append("<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
-                            }
-                                
-                            $("#showGroceryList").on("click", function() {
-                                $("#fullGroceryList").toggleClass("hide");
-                                // console.log(ingrArr);
-                            })
+                                $("#fullGroceryList").append("<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
+                                    var input = $("#savedGroceryList");
+                                    localStorage.setItem("server", input.value);
+                                }; 
 
-                            $(".fa-heart").on("click", function() {
-                                for (var i=0; i < ingrArr.length; i++){
-                                    // console.log(ingrArr[i]);
-                                    ingrList = "<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>"; 
-                                    $("#fullGroceryList").append(ingrList);
-                                    console.log(ingrList);
-                                }
+                            $("#showGroceryList").on("click", function() {
+                                $("#showGroceryList").animate({width: 0}, {duration: 1000});
+                                $("#showGroceryList").hide();
+                                $('#fullGroceryList').show();
+                                $('#fullGroceryList').animate({width: 400}, {duration: 1000});
                             })
+                            
+                            $("#fullGroceryList" ).click(function() {
+                                $(this).animate({width: 0}, {duration: 1000});
+                                $(this).hide();
+                                $('#showGroceryList').show();
+                                $('#showGroceryList').animate({width: 100}, {duration: 1000});
+                            });
                         }),
                         error: (function (error) {
                             console.log("error: " + error);
@@ -162,22 +165,15 @@ function generateRecipe(){
     });
 }
 generateRecipe();
-
-
-
-    // $(document).ready(function(){
-    //  $('#randomButton').trigger('click');
-    // }); 
-    /* TOP OF PAGE LINK - SCROLLING */
     
     $(window).scroll(function () {
-        if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
+        if ($(this).scrollTop() >= 100) { 
             $('#scrolling').fadeIn(200);
         } else {
             $('#scrolling').fadeOut(200);
         }
     });
-    /* WRAP EACH LETTER IN TO A SPAN in */
+
     $('.random-recipe-title').each(function () {
         $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
     });
