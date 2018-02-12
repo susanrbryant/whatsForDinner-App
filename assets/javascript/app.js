@@ -148,11 +148,7 @@ function generateRecipe() {
                     })
                 });
             }),
-            error: (function (error) {
-                console.log(error);
-            })
         });
-
     });
 
     $("#chickenButton").on("click", function () {
@@ -282,6 +278,7 @@ function generateRecipe() {
                     $('.container-recipe-image').html(img);
                 }
                 image();
+            
                 $("#ingrButton").on("click", function () {
                     $.ajax({
                         type: "GET",
@@ -326,11 +323,7 @@ function generateRecipe() {
                     })
                 });
             }),
-            error: (function (error) {
-                console.log(error);
-            })
         });
-
     });
 
     $("#vegetablesButton").on("click", function () {
