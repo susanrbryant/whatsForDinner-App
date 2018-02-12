@@ -22,6 +22,11 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1e5a89103752a76c33c510095b7351b095f05046
 (function(){
   
     var list = document.querySelector('#list'),
@@ -64,7 +69,10 @@ function closeNav() {
     getValues();
   });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e5a89103752a76c33c510095b7351b095f05046
 function generateRecipe(){
     $("#randomButton").on("click", function(){
         // var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
@@ -154,6 +162,11 @@ function generateRecipe(){
             //     getValues();
             //   })();
 
+<<<<<<< HEAD
+=======
+
+                // $("#ingrButton").on("click", function() 
+>>>>>>> 1e5a89103752a76c33c510095b7351b095f05046
                 $("#ingrButton").on("click", function() {
                     $.ajax({
                         type:"GET",
@@ -165,6 +178,37 @@ function generateRecipe(){
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
+<<<<<<< HEAD
+=======
+
+                            // $("#ingrTitle").toggleClass("hide");
+                            // $("#ingrTitle").html("Ingredients: ");
+
+                            $(".fas fa-heart").on("click", function() {
+                                // add recipe title and url to local storage nav bar
+                            })
+
+                            for (var i=0; i < ingrArr.length; i++){
+                                $("#fullGroceryList").append("<li>" + (i+1) + ".  " + ingrArr[i]+ "</li>");
+                                    var input = $("#savedGroceryList");
+                                    localStorage.setItem("server", input.value);
+                                }; 
+
+                            $("#showGroceryList").on("click", function() {
+                                $("#showGroceryList").animate({width: 0}, {duration: 1000});
+                                $("#showGroceryList").hide();
+                                $('#fullGroceryList').show();
+                                $('#fullGroceryList').animate({width: 400}, {duration: 1000});
+                            })
+                            
+                            $("#fullGroceryList" ).click(function() {
+                                $(this).animate({width: 0}, {duration: 1000});
+                                $(this).hide();
+                                $('#showGroceryList').show();
+                                $('#showGroceryList').animate({width: 100}, {duration: 1000});
+                            });
+
+>>>>>>> 1e5a89103752a76c33c510095b7351b095f05046
                             $("#ingreTitle").toggleClass("hide");
                             $("#ingrTitle").html("Ingredients: ");
 
@@ -192,6 +236,10 @@ function generateRecipe(){
                                 console.log(storedValue);
 
                             })
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e5a89103752a76c33c510095b7351b095f05046
                         }),
                         error: (function (error) {
                             console.log("error: " + error);
