@@ -8,7 +8,7 @@ body {
 }
 
 ol, ul {
-	margin: 0px 0px 10px 0px;
+	margin: 0px  0px 10px 0px;
 	list-style-type: none;
 }
 
@@ -206,10 +206,11 @@ a.navbar-brand.logo:hover {
 	-webkit-box-shadow: 0px 5px 11px -5px rgba(221,221,221,1);
 	-moz-box-shadow: 0px 5px 11px -5px rgba(221,221,221,1);
 	box-shadow: 0px 5px 5px -5px rgba(221,221,221,1);
+	overflow: auto;
 }
 
 .introduction{
-	height: 500px;
+	height: 50%;
 	text-align: center;
 	padding: 100px 0px 0px 0px;
 }
@@ -513,4 +514,9 @@ input {
 	display:none;
 	border: teal;
 	border-radius: 10px;
+}
+
+.col-md-3{
+	padding:10px;
+
 }

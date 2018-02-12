@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
+  
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
@@ -13,6 +14,7 @@
 
     <title>Random Recipe</title>
 </head>
+
 <body>
     <div class="wrapper">
         <header class="header">
@@ -53,8 +55,32 @@
                             <button type="button" id="randomButton" class="btn btn-default random-search-btn">
                                 Random Delight
                             </button>
+
                         </div>
                     </div>
+                    <div class="col-md-12">
+                            <div class="col-md-3">
+                                <button type="button" id="chickenButton" class="btn btn-default">
+                                    Chicken
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" id="seafoodButton" class="btn btn-default">
+                                    Seafood
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" id="vegetablesButton" class="btn btn-default">
+                                    Vegetables
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" id="pastaButton" class="btn btn-default">
+                                    Pasta
+                                </button>
+                            </div>
+
+                        </div>
                 </div>
             </div>
         </div>
@@ -81,6 +107,7 @@
                             <button type="button" id="ingrButton" class="btn btn-default-sm">
                                 Add to Grocery List
                             </button>
+                            <div id="grocery-list-content-col" class="container-ingredients"></div>
                             <p id="groceryList">
 
                             <ul id="ingredients" class="ingredients"></ul>
@@ -154,6 +181,7 @@
                         </p>
                         <div class="container-recipe-image-thumb">
                             <img src="assets/images/image-recipe-1.png" alt="Recipe Image Thumbnail" title="Recipe Image Thumbnail" id="" class="image-recipe-thumb">
+
                         </div>
                         <p class="read-more">
                             <a href="#" class="show-more">more ...</a>
@@ -163,45 +191,48 @@
             </div> -->
 
             <div class="row third-content">
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="container-recipe-thumb">
-                            <div id="showGroceryList">
-                                 Full grocery list!
-                            </div>
-                            <div id="fullGroceryList">Full Grocery List!</p>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="container-recipe-thumb">
+                        <div id="showGroceryList">
+                            Full grocery list!
+                        </div>
+                        <div id="fullGroceryList">Full Grocery List!</p>
                             </p>
                         </div>
-                    </div>
-
-
-                </div>
-        </div>
-        <footer class="footer">
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <div class="social">
-                        <p class="social-icon">
-                            <i class="fab fa-github"></i>
+                        <p class="read-more">
+                            <a href="#" class="show-more">more ...</a>
                         </p>
-                    </div>                
-                    <a id="scrolling" href="#top">
-                            <i class="fas fa-angle-up"></i>
-                    </a>
+                    </div>
+
+
                 </div>
 
-                <div class="col-xs-12 col-sm-6">
-                    <div class="copyright">
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> by Susan R Bryant, Krista Jesek, Andrew
+            </div>
+            <footer class="footer">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="social">
+                            <p class="social-icon">
+                                <i class="fab fa-github"></i>
+                           </p>
+                        </div>
+                        <a id="scrolling" href="#top">
+                            <i class="fas fa-angle-up"></i>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="copyright">
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> by Susan R Bryant, Krista Jesek, Andrew
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+            </footer>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>
