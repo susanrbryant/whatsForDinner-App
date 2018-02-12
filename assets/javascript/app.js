@@ -406,7 +406,7 @@ function generateRecipe() {
                     $('.container-recipe-image').html(img);
                 }
                 image();
-                $("#ingrButton").on("click", function () {
+
             //     (function(){
             //         var list = document.querySelector('#list'),
             //         form = document.querySelector('form'),
@@ -450,66 +450,61 @@ function generateRecipe() {
 
 
                 // $("#ingrButton").on("click", function() 
-                $("#ingrButton").on("click", function() {
-                    $.ajax({
-                        type: "GET",
-                        url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/get",
-                        data: {
-                            key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
-                            rId: recipesID
-                        },
-                        success: (function (result) {
-                            recipeArr = JSON.parse(result);
-                            ingrArr = recipeArr.recipe.ingredients;
+             $("#ingrButton").on("click", function() {
+                $.ajax({
+                    type: "GET",
+                    url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/get",
+                    data: {
+                        key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
+                        rId: recipesID
+                    },
+                    success: (function (result) {
+                        recipeArr = JSON.parse(result);
+                        ingrArr = recipeArr.recipe.ingredients;
 
 
-                            // $("#ingrTitle").toggleClass("hide");
-                            // $("#ingrTitle").html("Ingredients: ");
+                        // $("#ingrTitle").toggleClass("hide");
+                        // $("#ingrTitle").html("Ingredients: ");
 
-                            $(".fas fa-heart").on("click", function() {
-                                // add recipe title and url to local storage nav bar
-                            })
-
-                            $("#ingreTitle").toggleClass("hide");
-                            $("#ingrTitle").html("Ingredients: ");
-
-                            $(".fas fa-heart").on("click", function () {
-                                // add recipe title and url to local storage nav bar
-                            })
-
-                            for (var i = 0; i < ingrArr.length; i++) {
-                                $("#fullGroceryList").append("<li>" + (i + 1) + ".  " + ingrArr[i] + "</li>");
-                                var input = $("#savedGroceryList");
-                                localStorage.setItem("server", input.value);
-                            };
-
-                            $("#showGroceryList").on("click", function () {
-                                $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
-                                $("#showGroceryList").hide();
-                                $('#fullGroceryList').show();
-                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
-                            })
-
-                            $("#fullGroceryList").click(function () {
-                                $(this).animate({ width: 0 }, { duration: 1000 });
-                                $(this).hide();
-                                $('#showGroceryList').show();
-                                $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
-                            });
-                        }),
-                        error: (function (error) {
-                            console.log("error: " + error);
+                        $(".fas fa-heart").on("click", function() {
+                            // add recipe title and url to local storage nav bar
                         })
+
+                        $("#ingreTitle").toggleClass("hide");
+                        $("#ingrTitle").html("Ingredients: ");
+
+                        $(".fas fa-heart").on("click", function () {
+                            // add recipe title and url to local storage nav bar
+                        })
+
+                        for (var i = 0; i < ingrArr.length; i++) {
+                            $("#fullGroceryList").append("<li>" + (i + 1) + ".  " + ingrArr[i] + "</li>");
+                            var input = $("#savedGroceryList");
+                            localStorage.setItem("server", input.value);
+                        };
+
+                        $("#showGroceryList").on("click", function () {
+                            $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
+                            $("#showGroceryList").hide();
+                            $('#fullGroceryList').show();
+                            $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
+                        })
+
+                        $("#fullGroceryList").click(function () {
+                            $(this).animate({ width: 0 }, { duration: 1000 });
+                            $(this).hide();
+                            $('#showGroceryList').show();
+                            $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
+                        });
+                    }),
+                    error: (function (error) {
+                        console.log("error: " + error);
                     })
                 });
-            }),
-            error: (function (error) {
-                console.log(error);
             })
-        });
-
+        })
     });
-
+    
     $("#pastaButton").on("click", function () {
         $.ajax({
             url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/search",
@@ -599,8 +594,9 @@ function generateRecipe() {
                 console.log(error);
             })
         });
-
     });
+});
+
 }
 generateRecipe();
 
