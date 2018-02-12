@@ -207,19 +207,20 @@ a.navbar-brand.logo:hover {
 	-moz-box-shadow: 0px 5px 11px -5px rgba(221,221,221,1);
 	box-shadow: 0px 5px 5px -5px rgba(221,221,221,1);
 	overflow: auto;
+	width: 100%;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .introduction{
 	height: 50%;
 	text-align: center;
 	padding: 100px 0px 0px 0px;
-}
-
-.container-fluid {
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .change-recipes{
