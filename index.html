@@ -96,28 +96,29 @@
                         <div id="main-content-col" class="container-recipe">
                             <p class="favorite text-right">
                                 <i class="fas fa-heart"></i>
-                                <input type="text" id="txtArea">
-                                <input type="button" value="Add" id="addButton" onclick="addItems()">
-                                <input type="button" value="Display" id="displayButton" onclick="displayItems()">
-                                <hr>
                                 <div id="result"></div>
-
-                                <h2 id="recipe-title" class="recipe-title"></h2>
-                                <div id="recipes-url"></div>
-
+                                <p id="recipe-title" class="recipe-title"></p>
+                                <hr/>
+                                <p>
+                                    <a id="recipes-url" class="recipes-url"></a>
+                                </p>
+                                <br>
+                                <hr/>
                                 <button type="button" id="ingrButton" class="btn btn-default-sm">
                                     Add to Grocery List
                                 </button>
+                                <hr/>
+                                <input type="button" value="Add to Recipe Log" id="displayButton">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row main-content">
                 <div class="row third-content">
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-md-12">
                         <div class="container-recipe-thumb">
                             <div id="showGroceryList">
-                                Full grocery list!
+                                View Your Full grocery list!
                             </div>
                             <div id="fullGroceryList">Full Grocery List!</div>
                         </div>
@@ -161,32 +162,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script>
-        var items = [];
-        var recipeTitle = "pizza"
-        function addItems() {
-            items.push(document.getElementById("txtArea").value);
-            document.getElementById('txtArea').value = '';
-            console.log('items = [' + recipeTitle + ']');
-            items.push(recipeTitle);
-            $("#list").html(items);
 
-            // for (var i=0; i < items.length; i++){
-            //     var recipeList = items.push(items[i]);
-
-            // }
-
-        }
-        function displayItems() {
-
-            $("#list").html(items);
-            // items.push(recipeTitle);
-            // for (var i in items) {
-            //     var e = document.createElement("p");
-            //     var t = document.createTextNode('Element ' + i + ' = ' + items[i]);
-            //     e.appendChild(t);
-            //     document.body.appendChild(e);
-            // }
-        }
     </script>
 </body>
 
