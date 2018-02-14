@@ -283,11 +283,9 @@ a.navbar-brand.logo:hover {
 #chickenButton, #seafoodButton, #vegetablesButton, #pastaButton {
 	font-size: 150%;
     margin-top: 10%;
-    margin-bottom: 10%;
-
-<<<<<<< HEAD
+	margin-bottom: 10%;
 }
-=======
+
 .content-recipe.container-recipe { 
 	background-color: #f8f8f8;
 	padding: 30px;
@@ -297,15 +295,8 @@ a.navbar-brand.logo:hover {
 }
 
 
-/* IMAGES */
-/* .container-recipe-thumb {
-	border: 1px solid #dddddd;
-	padding: 5px 5px 5px 5px;
-	margin-bottom: 20px;	
-} */
 
 
->>>>>>> a2525bfc46d07932496f2c481d9ede2c5f4e0d3d
 .container-recipe-image {
 	width: 100%;
 	overflow: hidden;
