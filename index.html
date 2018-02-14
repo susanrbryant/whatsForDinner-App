@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Random Recipe</title>
+    <title>Random Recipe Delights</title>
 </head>
 
 <body>
+
     <div class="wrapper">
         <header class="header">
             <nav class="navbar navbar-default">
@@ -55,105 +56,133 @@
                             <button type="button" id="randomButton" class="btn btn-default random-search-btn">
                                 Random Delight
                             </button>
-
                         </div>
                     </div>
-                    <div class="col-md-12">
-                            <div class="col-md-3">
-                                <button type="button" id="chickenButton" class="btn btn-default">
-                                    Chicken
-                                </button>
-                            </div>
-                            <div class="col-md-3">
-                                <button type="button" id="seafoodButton" class="btn btn-default">
-                                    Seafood
-                                </button>
-                            </div>
-                            <div class="col-md-3">
-                                <button type="button" id="vegetablesButton" class="btn btn-default">
-                                    Vegetables
-                                </button>
-                            </div>
-                            <div class="col-md-3">
-                                <button type="button" id="pastaButton" class="btn btn-default">
-                                    Pasta
-                                </button>
-                            </div>
-
-                        </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="content">
-                <div class="row main-content">
-                    <div class="col-xs-12 col-sm-6 main-content-column">
-                        <div class="container-recipe">
-                            <div class="container-recipe-image">
-                                <img href="javascript:image();" alt="Recipe Image" title="Recipe Image" id="image-recipe" class="image-recipe">
+
+		<div class="container-fluid outer-content">
+        
+            <div class="container">
+                <div class="content">
+                    <div class="row main-content">
+                        <div class="col-xs-12 col-sm-6 main-content-column">
+                            <div class="container-recipe">
+                                <div class="container-recipe-image">
+                                    <img href="javascript:image();" alt="Recipe Image" title="Recipe Image" id="image-recipe" class="image-recipe">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 main-content-column">
-                        <div id="main-content-col" class="container-recipe content-recipe">
-                            <p class="favorite text-right">
-                                <i class="fas fa-heart"></i>
-                            </p>
-
-                            <h2 id="recipe-title" class="recipe-title"></h2>
-                            <div id="recipes-url"></div>
-
-                            <button type="button" id="ingrButton" class="btn btn-default-sm">
-                                Add to Grocery List
-                            </button>
+                        <div class="col-xs-12 col-sm-6 main-content-column">
+                            <div id="main-content-col" class="container-recipe content-recipe">
+                            
+                                <div class="row content-row">   
+                                    <p class="favorite"><i class="fas fa-heart"></i></p>
+        
+                                    <h2 id="recipe-title" class="recipe-title"></h2>
+                                
+                                    <div id="recipes-url" class="recipes-url"></div>
+        
+                                    <button type="button" id="ingrButton" class="btn btn-default-sm">
+                                        Add to Grocery List
+                                    </button>
+                                    
+                                </div> 
+                                                           
+                                <div class="row category-row">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
+                                        <button type="button" id="chickenButton" class="btn btn-default">
+                                            Chicken
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
+                                        <button type="button" id="seafoodButton" class="btn btn-default">
+                                            Seafood
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
+                                        <button type="button" id="vegetablesButton" class="btn btn-default">
+                                            Vegetables
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
+                                        <button type="button" id="pastaButton" class="btn btn-default">
+                                            Pasta
+                                        </button>
+                                    </div>
+                                </div>
+                            
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
+            
             <div class="row main-content">
+            
                 <div class="row third-content">
-                    <div class="col-xs-12 col-sm-6">
+                
+                    <div class="col-md-12">
+                    
                         <div class="container-recipe-thumb">
-                            <div id="showGroceryList">
-                                Full grocery list!
-                            </div>
+                        
+                            <div id="showGroceryList">Full grocery list!</div>
                             <div id="fullGroceryList">Full Grocery List!</div>
+                            
                         </div>
+                        
                     </div>
+                    
                 </div>
+                
             </div>
+
 
             <div class="row main-content">
-                <div class="col-xs-12 col-sm-6">
-                        <p class="read-more">
-                            <a href="#" class="show-more">Pick another Recipe</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+				<div class="col-md-12">
+					<p class="read-more">
+						<a href="#" class="show-more">Pick another Recipe</a>
+					</p>
+				</div>
+			</div>
+            
+            
+		</div> 
+           
+	</div> <!-- // wrapper -->
 
-            <footer class="footer">
-                <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <div class="social">
-                            <p class="social-icon">
-                                <i class="fab fa-github"></i>
-                           </p>
-                        </div>
-                        <a id="scrolling" href="#top">
-                            <i class="fas fa-angle-up"></i>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="copyright">
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> by Susan R Bryant, Krista Jesek, Andrew
-                        </div>
+
+
+
+        <footer class="footer">
+            <div class="row footer-row">
+            
+                <div class="col-md-12">
+                    <div class="social">
+                        <p class="social-icon">
+                            <i class="fab fa-github"></i>
+                       </p>
                     </div>
                 </div>
-            </footer>
-        </div>
+                
+                <div class="col-md-12">
+                    <div class="copyright">
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> by Susan R Bryant, Krista Jesek, Andrew
+                    </div>                        
+                </div>
+                
+                <a id="scrolling" href="#top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+
+            </div>
+        </footer>
+            
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>

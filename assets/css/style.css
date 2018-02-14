@@ -49,9 +49,10 @@ h1.random-recipe-title {
 }
 
 h2.recipe-title{
-	font-size: 1.6em;
-	line-height: 1.3em;
-	margin-top: 0;
+	font-size: 2.1em;
+    line-height: 1.1em;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 h3.ingredients-title{
@@ -66,6 +67,9 @@ h3.random-whats-dinner {
 
 p.favorite{
 	color: #efb11c;
+	font-size: 1.5em;
+	text-align: right;
+	margin: 0px;
 }
 
 .far.fa-heart{}
@@ -214,6 +218,7 @@ a.navbar-brand.logo:hover {
 
 .introduction{
 	height: 50%;
+	height: 500px;
 	text-align: center;
 	padding: 100px 0px 0px 0px;
 }
@@ -231,6 +236,24 @@ a.navbar-brand.logo:hover {
 	padding-left: 0px;
 }
 
+.recipes-url{
+	padding: 20px 0px 45px 0px;
+}	
+
+.category-row {
+	margin-top: 30px;
+	margin-bottom: -10px;
+}			
+				
+.category-row .col-xs-3 {
+	padding-right: 5px;
+	padding-left: 5px;
+	text-align: center;
+}
+
+.content-row {
+	margin-bottom: 120px;
+}
 
 .row.main-content {
 	position: relative;
@@ -292,18 +315,18 @@ a.navbar-brand.logo:hover {
 	position: relative;
 	top: -50px;
 	width: 100%;
-	border: white; 
+	border: 1px solid #ffffff; 
 }
 
 
 .container-recipe-image-thumb {
 	overflow: hidden;
-	border: white;  
+	border: 1px solid #ffffff;   
 }
 
 .image-recipe-thumb {
 	width: 100%;
-	border: white; 
+	border: 1px solid #ffffff; 
 }
 
 
@@ -315,10 +338,10 @@ ul.recipe {
 
 
 /* TOP OF PAGE LINK - SCROLLING */	
-#scrolling{
+#scrolling {
  	position: fixed;
     bottom: 100px;
-    right: 5%;
+    right: 3%;
 	background: #858585;
     background: rgb(133, 133, 133);
     background: rgba(133, 133, 133, 0.5);
@@ -375,7 +398,7 @@ ul.recipe {
 footer {
 	width: 100%;
 	background-color: #e9e9e9;
-	padding: 5px 0;
+	/*padding: 5px 0;*/
 	margin-top: 70px;
 	overflow: hidden;
 	color: #858585;
@@ -384,6 +407,7 @@ footer {
 
 .social {
 	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .social-icon {
@@ -391,11 +415,11 @@ footer {
 	margin: 0px;
 }
 
-.copyright{
-	padding-top: 20px;
-	padding-right: 50px;
+.copyright {
+	padding-right: 20px;
 	text-align: right;
 	padding-bottom: 20px;
+	padding-left: 20px;
 }
 
 
@@ -409,6 +433,9 @@ footer {
     background-color: #efb11c;
 	border: 1px solid #efb11c;
 	border-radius: 0px;
+	width: 100%;
+    text-align: center;
+    padding: 6px 4px;
 }
 
 
@@ -521,17 +548,17 @@ input {
 	display: none; 
 }
 
-#showGroceryList{
+#showGroceryList {
     width:100px;
     background-color: #4aaaa5;
-    color: white;
+    color: #ffffff;
 	display: block;
 	border-radius: 0px;
 }
 
-#fullGroceryList {
+#fullGyListrocer {
     width: 0px;
-	background: lightgray;
+	background: #dddddd;
 	color: #4aaaa5;
 	display: none;
 	border-radius: 0px;
