@@ -10,29 +10,29 @@ var recipeArr = [];
 var search;
 
 
-function save(){
-  
+function save() {
+
     var list = document.querySelector('#list'),
         form = document.querySelector('form'),
         item = document.querySelector('#item');
-    
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      list.innerHTML += '<li>' + item.value + '</li>';
-      store();
-      item.value = "";
-    },false);
-    
-    list.addEventListener('click',function(e){
-      var t = e.target;
-      if(t.classList.contains('checked')){
-        t.parentNode.removeChild(t);
-      } else {
-        t.classList.add('checked');
-      }
-      store();
-    },false);
-    
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        list.innerHTML += '<li>' + item.value + '</li>';
+        store();
+        item.value = "";
+    }, false);
+
+    // list.addEventListener('click',function(e){
+    //   var t = e.target;
+    //   if(t.classList.contains('checked')){
+    //     t.parentNode.removeChild(t);
+    //   } else {
+    //     t.classList.add('checked');
+    //   }
+    //   store();
+    // },false);
+
     function store() {
         window.localStorage.myitems = list.innerHTML;
     }
@@ -64,11 +64,17 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
 }
 
-function generateRecipe() {
 
+/**
+ * calls the speak on an obj with a given string
+ * calls five on click functions to trigger ajax call
+ * @param {obj} dog - a dog object with a speak method
+ * @param {string} sound - a string representing a dog noise
+ * @return {number} - a number representing the decibal 
+ */
+
+function generateRecipe() {
     $("#randomButton").on("click", function () {
-        // var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
-        // var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=" + recipesID; 
         $.ajax({
             url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/search",
             type: "GET",
@@ -100,6 +106,7 @@ function generateRecipe() {
                 $("#recipes-url").empty().append(recipesURL);
                 $("#recipe-title").empty().append(recipesTitle);
 
+
                 function image() {
                     var img = document.createElement("IMG");
                     img.src = recipesImage;
@@ -121,10 +128,6 @@ function generateRecipe() {
                             // $("#ingrTitle").toggleClass("hide");
                             // $("#ingrTitle").html("Ingredients: ");
 
-                            $(".fas fa-heart").on("click", function () {
-                                // add recipe title and url to local storage nav bar
-                            });
-
                             for (var i = 0; i < ingrArr.length; i++) {
                                 $("#fullGroceryList").append("<li>" + (i + 1) + ". " + ingrArr[i] + "</li>");
                                 var input = $("#savedGroceryList");
@@ -135,7 +138,7 @@ function generateRecipe() {
                                 $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
                                 $("#showGroceryList").hide();
                                 $('#fullGroceryList').show();
-                              $('#fullGroceryList').animate({ width: 400}, { duration: 1000 });
+                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
                             });
 
                             $("#fullGroceryList").click(function () {
@@ -368,59 +371,59 @@ function generateRecipe() {
                 }
                 image();
 
-             $("#ingrButton").on("click", function() {
-                $.ajax({
-                    type: "GET",
-                    url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/get",
-                    data: {
-                        key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
-                        rId: recipesID
-                    },
-                    success: (function (result) {
-                        recipeArr = JSON.parse(result);
-                        ingrArr = recipeArr.recipe.ingredients;
+                $("#ingrButton").on("click", function () {
+                    $.ajax({
+                        type: "GET",
+                        url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/get",
+                        data: {
+                            key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
+                            rId: recipesID
+                        },
+                        success: (function (result) {
+                            recipeArr = JSON.parse(result);
+                            ingrArr = recipeArr.recipe.ingredients;
 
 
-                        // $("#ingrTitle").toggleClass("hide");
-                        // $("#ingrTitle").html("Ingredients: ");
+                            // $("#ingrTitle").toggleClass("hide");
+                            // $("#ingrTitle").html("Ingredients: ");
 
-                        $(".fas fa-heart").on("click", function() {
-                            // add recipe title and url to local storage nav bar
-                        });
+                            $(".fas fa-heart").on("click", function () {
+                                // add recipe title and url to local storage nav bar
+                            });
 
-                        $(".fas fa-heart").on("click", function () {
-                            // add recipe title and url to local storage nav bar
-                        });
+                            $(".fas fa-heart").on("click", function () {
+                                // add recipe title and url to local storage nav bar
+                            });
 
-                        for (var i = 0; i < ingrArr.length; i++) {
-                            $("#fullGroceryList").append("<li>" + (i + 1) + ".  " + ingrArr[i] + "</li>");
-                            var input = $("#savedGroceryList");
-                            localStorage.setItem("server", input.value);
-                        }
+                            for (var i = 0; i < ingrArr.length; i++) {
+                                $("#fullGroceryList").append("<li>" + (i + 1) + ".  " + ingrArr[i] + "</li>");
+                                var input = $("#savedGroceryList");
+                                localStorage.setItem("server", input.value);
+                            }
 
-                        $("#showGroceryList").on("click", function () {
-                            $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
-                            $("#showGroceryList").hide();
-                            $('#fullGroceryList').show();
-                            $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
-                        });
+                            $("#showGroceryList").on("click", function () {
+                                $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
+                                $("#showGroceryList").hide();
+                                $('#fullGroceryList').show();
+                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
+                            });
 
-                        $("#fullGroceryList").click(function () {
-                            $(this).animate({ width: 0 }, { duration: 1000 });
-                            $(this).hide();
-                            $('#showGroceryList').show();
-                            $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
-                        });
-                    }),
-                    error: (function (error) {
-                        console.log("error: " + error);
-                    })
+                            $("#fullGroceryList").click(function () {
+                                $(this).animate({ width: 0 }, { duration: 1000 });
+                                $(this).hide();
+                                $('#showGroceryList').show();
+                                $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
+                            });
+                        }),
+                        error: (function (error) {
+                            console.log("error: " + error);
+                        })
+                    });
                 });
-            });
             })
         });
     });
-    
+
     $("#pastaButton").on("click", function () {
         $.ajax({
             url: "https://cors-anywhere.herokuapp.com/" + "https://food2fork.com/api/search",
@@ -471,7 +474,7 @@ function generateRecipe() {
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
-                          
+
                             $(".fas fa-heart").on("click", function () {
                                 // add recipe title and url to local storage nav bar
                             });
@@ -520,16 +523,18 @@ $(window).scroll(function () {
     }
 });
 
-$('.random-recipe-title').each(function () {
-    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-});
+// $('.random-recipe-title').each(function () {
+//     $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+// });
 
-anime.timeline({ loop: false }).add({
-    targets: '.random-recipe-title .letter',
-    opacity: [0, 1],
-    easing: "easeInOutQuad",
-    duration: 2250,
-    delay: function (el, i) {
-        return 150 * (i + 1);
-    }
-});
+// anime.timeline({ loop: false }).add({
+//     targets: '.random-recipe-title .letter',
+//     opacity: [0, 1],
+//     easing: "easeInOutQuad",
+//     duration: 2250,
+//     delay: function (el, i) {
+//         return 150 * (i + 1);
+//     }
+// });
+
+

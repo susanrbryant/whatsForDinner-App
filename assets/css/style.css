@@ -403,7 +403,7 @@ footer {
 
 /* BUTTONS */
 .btn {
-	border-radius: 25px; 
+	border-radius: 15px; 
 }
 
 .btn-default {
@@ -500,7 +500,8 @@ input {
 }
 
 #showGroceryList{
-    width:100px;
+	width:500%;
+	height: 120%;
     background:teal;
     color: white;
 	display:block;
