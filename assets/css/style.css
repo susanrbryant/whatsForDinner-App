@@ -43,7 +43,7 @@ h1, h2, h3 {
 
 h1.random-recipe-title {
 	color: #4aaaa5;
-	font-size: 250%;
+	font-size: 350%;
 	line-height: 1.1em;
 	font-weight: 900;
 }
@@ -280,6 +280,12 @@ a.navbar-brand.logo:hover {
 	font-size: 150%;
 }
 
+#chickenButton, #seafoodButton, #vegetablesButton, #pastaButton {
+	font-size: 150%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+}
 .container-recipe-image {
 	width: 100%;
 	overflow: hidden;
@@ -537,11 +543,4 @@ input {
 	border-radius: 10px;
 }
 
-.col-md-3{
-	padding:10px;
 
-}
-
-#recipe-title {
-	size: 250%;
-}
