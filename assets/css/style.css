@@ -48,7 +48,6 @@ h1.random-recipe-title {
 	font-weight: 900;
 }
 
-<<<<<<< HEAD
 .recipe-title{
     font-size: 225%;
     margin: 0 auto;
@@ -61,12 +60,6 @@ h1.random-recipe-title {
     margin: 0 auto;
     width: 90%;
     padding: 10px;
-=======
-h2.recipe-title{
-	font-size: 1.6em;
-	line-height: 1.3em;
-	margin-top: 0;
->>>>>>> a2525bfc46d07932496f2c481d9ede2c5f4e0d3d
 }
 
 h3.ingredients-title{
@@ -293,8 +286,6 @@ a.navbar-brand.logo:hover {
     border: 1px solid #dddddd;
 	padding-top: 7px;
 }
-
-
 
 
 .container-recipe-image {
