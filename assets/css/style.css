@@ -43,15 +43,24 @@ h1, h2, h3 {
 
 h1.random-recipe-title {
 	color: #4aaaa5;
-	font-size: 3.1em;
+	font-size: 250%;
 	line-height: 1.1em;
 	font-weight: 900;
 }
 
-h2.recipe-title{
-	font-size: 1.6em;
-	line-height: 1.3em;
-	margin-top: 0;
+.recipe-title{
+    font-size: 225%;
+    margin: 0 auto;
+	width: 90%;
+	padding: 10px;
+}
+
+.recipes-url{
+	font-size: 175%;
+    margin: 0 auto;
+    width: 90%;
+    padding: 10px;
+
 }
 
 h3.ingredients-title{
@@ -261,6 +270,9 @@ a.navbar-brand.logo:hover {
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
 }
+.show-more{
+	font-size: 150%;
+}
 
 
 .content-recipe.container-recipe { 
@@ -271,13 +283,6 @@ a.navbar-brand.logo:hover {
 	padding-top: 7px;
 }
 
-
-/* IMAGES */
-/* .container-recipe-thumb {
-	border: 1px solid #dddddd;
-	padding: 5px 5px 5px 5px;
-	margin-bottom: 20px;	
-} */
 
 
 .container-recipe-image {
@@ -401,7 +406,8 @@ footer {
 
 /* BUTTONS */
 .btn {
-	border-radius: 0px; 
+	border-radius: 15px; 
+
 }
 
 .btn-default {
@@ -452,7 +458,9 @@ footer {
     color: #4aaaa5;
     background-color:#f5f5f5;
 	border: 1px solid #4aaaa5;
-	border-radius: 0px;
+	border-radius: 25px;
+	padding: 5%;
+
 }
 
 .btn-default-sm:hover {
@@ -462,7 +470,20 @@ footer {
 	border-radius: 0px;
 }
 
+#displayButton{
+    color: #4aaaa5;
+    background-color:#f5f5f5;
+	border: 1px solid #4aaaa5;
+	border-radius: 25px;
+	padding: 5%;
+}
 
+#displayButton:hover {
+    color: #ffffff;
+    background-color: #efb11c;
+	border: 1px solid #efb11c;
+	border-radius: 25px;
+}
 input {
 	border: none;
 	display: block;
@@ -522,11 +543,15 @@ input {
 }
 
 #showGroceryList{
-    width:100px;
-    background-color: #4aaaa5;
+	padding: 10%;
+	font-size: 200%;
+    background:teal;
     color: white;
-	display: block;
-	border-radius: 0px;
+	display:block;
+	border-radius: 5px;
+	border: teal; 
+	text-align: center;
+
 }
 
 #fullGroceryList {
@@ -539,4 +564,10 @@ input {
 
 .col-md-3 {
 	padding:10px;
+
+}
+
+#recipe-title {
+	size: 250%;
+
 }
