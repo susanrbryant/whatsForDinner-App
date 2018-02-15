@@ -66,7 +66,17 @@ function closeNav() {
 
 function generateRecipe() {
 
-    $("#randomButton").on("click", function () {
+    $("#randomButton").on("click", function() {
+		
+		/**
+		*
+		*
+		*/
+		$("html, body").animate({
+			scrollTop: $(".outer-content").offset().top 
+		}, 2000);
+			
+		
         // var queryURLOne = "http://food2fork.com/api/search?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q";
         // var queryURLTwo = "http://food2fork.com/api/get?key=2a8b74ca359dd160bef9caeb0fa0ae5e&q=" + recipesID; 
         $.ajax({
@@ -512,6 +522,11 @@ function generateRecipe() {
 }
 generateRecipe();
 
+
+/**
+*
+*
+*/
 $(window).scroll(function () {
     if ($(this).scrollTop() >= 100) {
         $('#scrolling').fadeIn(200);
@@ -520,6 +535,10 @@ $(window).scroll(function () {
     }
 });
 
+/**
+*
+*
+*/
 $('.random-recipe-title').each(function () {
     $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 });
@@ -532,4 +551,14 @@ anime.timeline({ loop: false }).add({
     delay: function (el, i) {
         return 150 * (i + 1);
     }
+});
+
+/**
+*
+*
+*/
+$(".show-more").on("click", function() {	
+	$("html, body").animate({
+		scrollTop: $(".random-recipe-title").offset().top 
+	}, 2000);
 });
