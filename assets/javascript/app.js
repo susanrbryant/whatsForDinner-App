@@ -162,7 +162,7 @@ function generateRecipe() {
                                 $("#fullGroceryList").append("<li>" + (i + 1) + ". " + ingrArr[i] + "</li>");
                                 var input = $("#savedGroceryList");
                                 localStorage.setItem("server", input.value);
-                            };
+                            }
 
                             $("#showGroceryList").on("click", function () {
                                 $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
@@ -551,9 +551,7 @@ function generateRecipe() {
                         })
 
                         });
-                        error: (function (error) {
-                            console.log("error: " + error);
-                        })
+
 
                         $("#showGroceryList").on("click", function () {
                             $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
@@ -569,13 +567,12 @@ function generateRecipe() {
                             $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
                         });
                     });
-                });
-            }),
-            error: (function (error) {
-                console.log(error);
+                })
             })
+            
         });
-    });
+    
+    
 }
 generateRecipe();
 
