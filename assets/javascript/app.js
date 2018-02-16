@@ -135,8 +135,7 @@ function generateRecipe() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
                     $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
-                    console.log(link);
-                    console.log(recipesURL);
+
                 });
 
                 function image() {
@@ -229,8 +228,7 @@ function generateRecipe() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
                     $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
-                    console.log(link);
-                    console.log(recipesURL);
+
                 });
 
                 function image() {
@@ -329,8 +327,7 @@ function generateRecipe() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
                     $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
-                    console.log(link);
-                    console.log(recipesURL);
+
                 });
 
                 function image() {
@@ -425,8 +422,7 @@ function generateRecipe() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
                     $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
-                    console.log(link);
-                    console.log(recipesURL);
+
                 });
 
                 function image() {
@@ -520,8 +516,7 @@ function generateRecipe() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
                     $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
-                    console.log(link);
-                    console.log(recipesURL);
+
                 });
 
                 function image() {
