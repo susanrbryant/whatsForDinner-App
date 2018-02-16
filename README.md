@@ -17,8 +17,6 @@ Ever wonder what's for dinner? With the What's For Dinner app, you'll never find
 **Susan Bryant** (https://github.com/susanrbryant)
 **Andrew Zdunek** (https://github.com/ajzdunek)
 
-## License
-
 ## Acknowledgments
 
 -Hat tip to anyone who's code was used
