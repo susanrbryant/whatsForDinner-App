@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Random Recipe</title>
+    <title>Random Recipe Delights</title>
 </head>
 
 <body>
@@ -23,10 +23,8 @@
                     <div class="navbar-header">
                         <div class="container">
                             <div id="mySidenav" class="sidenav">
-                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;Recipes</a>
-                                <div class="container">
-                                    <ul id="list"></ul>
-                                </div>
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;Recipe Log</a>
+                                <ul id="list"></ul>
                             </div>
                             <div class="container-hamburger-menu">
                                 <a href="#" id="main" class="hamburger-menu" onclick="openNav()">
@@ -34,50 +32,48 @@
                                 </a>
                             </div>
                             <div class="container-logo">
-                                <a href="#" class="navbar-brand logo">What's for Dinner</a>
+                                <a href="#" class="navbar-brand logo">Random Recipes</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
         </header>
-
+        <div class="row category-row">
         <div class="container-fluid intro">
             <div class="row introduction">
                 <div class="col-md-12">
                     <h1 class="random-recipe-title">Random Recipe Delights</h1>
                     <h3 class="random-whats-dinner">What's for dinner?</h3>
-                    <div class="row change-recipes">
-                        <div class="col-md-12">
-                            <button type="button" id="randomButton" class="btn btn-default random-search-btn">
-                                Random Delight
+                <div class="row change-recipes">
+                     <div class="col-md-12">
+                        <button type="button" id="randomButton" class="btn btn-default random-search-btn">
+                               Random Delight
                             </button>
-
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <button type="button" id="chickenButton" class="btn btn-default">
-                                Chicken
-                            </button>
+                    <div class="row category-row">
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" id="chickenButton" class="btn btn-default">
+                                    Chicken
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" id="seafoodButton" class="btn btn-default">
+                                    Seafood
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" id="vegetablesButton" class="btn btn-default">
+                                    Veggies
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" id="pastaButton" class="btn btn-default">
+                                    Pasta
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <button type="button" id="seafoodButton" class="btn btn-default">
-                                Seafood
-                            </button>
-                        </div>
-                        <div class="col-md-3">
-                            <button type="button" id="vegetablesButton" class="btn btn-default">
-                                Vegetables
-                            </button>
-                        </div>
-                        <div class="col-md-3">
-                            <button type="button" id="pastaButton" class="btn btn-default">
-                                Pasta
-                            </button>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -92,23 +88,26 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xs-12 col-sm-6 main-content-column">
                         <div id="main-content-col" class="container-recipe content-recipe">
-                            <p class="favorite text-right">
+                            <div class="row content-row">
+                                <p class="favorite text-right">
                                 <i class="fas fa-heart"></i>
-                                <div id="result"></div>
-                                <p id="recipe-title" class="recipe-title"></p>
+                                <h2 id="recipe-title" class="recipe-title"></h2>
                                 <hr/>
-                                <p>
-                                    <a id="recipes-url" class="recipes-url"></a>
+                                <p id="url-para">
+                                    <h4 id="recipes-url" class="recipes-url"></h4>
                                 </p>
-                                <br>
+                                <hr/>
+                                <p id="add-para">                        
+                                    <input type="button" value="Add to Recipe Log" id="displayButton">
+                                </p> 
                                 <hr/>
                                 <button type="button" id="ingrButton" class="btn btn-default-sm">
                                     Add to Grocery List
                                 </button>
-                                <hr/>
-                                <input type="button" value="Add to Recipe Log" id="displayButton">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,11 +115,11 @@
             <div class="row main-content">
                 <div class="row third-content">
                     <div class="col-md-12">
-                        <div class="container-recipe-thumb">
-                            <div id="showGroceryList">
-                                View Your Full grocery list!
-                            </div>
-                            <div id="fullGroceryList">Full Grocery List!</div>
+                        <div id="showGroceryList">
+                            View Your Full Grocery List!
+                        </div>
+                        <div id="fullGroceryList">
+                            <p id="groceryList">Full Grocery List!</p>
                         </div>
                     </div>
                 </div>
