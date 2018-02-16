@@ -10,6 +10,16 @@ var recipeArr = [];
 var search;
 var itemList;
 
+ /** 
+ * You're able to save a favorite recipe to the local storage.
+ * @function save
+ * @param {string} 
+ * @function store
+ * @param {string} 
+ * @function getValues
+ * @return 
+ * @param {string} list.innerHTML = stored value.
+*/
 function save() {
 
     var list = document.querySelector('#list'),
@@ -52,6 +62,10 @@ function save() {
     getValues();
 }
 
+/** This group of functions controls the opening and closing of the Navbar
+ * @function openNav
+ * @function closeNav
+*/
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -65,14 +79,21 @@ function closeNav() {
 }
 
 
-/**
- * calls the speak on an obj with a given string
- * calls five on click functions to trigger ajax call
- * @param {obj} dog - a dog object with a speak method
- * @param {string} sound - a string representing a dog noise
- * @return {number} - a number representing the decibal 
+ /**
+ * Gets images data from Food2Fork API
+ * @function generates recipe and ingredients
+        * @function on click - randomButton
+        * @function on click - chickenButton
+        * @function on click - seafoodButton
+        * @function on click - vegetablesButton
+        * @function on click - pastaButton
+ * @param {object} results - JSON data recieved from food2fork
+ * @param {string} results - recipes-url 
+ * @param {string} results - recipes-title
+ * @function error
+ * @param {string} error
+ * @return {array} food2fork - recipesImage
  */
-
 function generateRecipe() {
     $("#randomButton").on("click", function () {
         $.ajax({
@@ -90,8 +111,7 @@ function generateRecipe() {
                 var recipesTitle = $("<p>");
                 var recipesImage = $("<img>");
                 var recipesURL = $("<a>");
-                $("#recipes-url").empty().append(recipesURL);
-                $("#recipe-title").empty().append(recipesTitle);
+
                 $(".container-recipe-image").attr("src", recipesImage);
 
                 for (var i = 0; i < randomArr.length; i++) {
@@ -100,13 +120,24 @@ function generateRecipe() {
                     sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
                 }
-
                 recipesURL.attr("href", sourceURL);
                 recipesURL.attr("target", "_blank");
                 recipesURL.text("Click for recipe!");
                 $("#recipes-url").empty().append(recipesURL);
                 $("#recipe-title").empty().append(recipesTitle);
 
+                recipesURL.attr("href", sourceURL);
+                recipesURL.attr("target", "_blank");
+                recipesURL.text("Click for recipe!");
+
+                var items = [];             
+                $("#displayButton").on("click", function displayItems() {
+                    items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
+                    items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
+                    $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
+                    console.log(link);
+                    console.log(recipesURL);
+                });
 
                 function image() {
                     var img = document.createElement("IMG");
@@ -114,42 +145,6 @@ function generateRecipe() {
                     $('.container-recipe-image').html(img);
                 }
                 image();
-
-                var items = [];
-                //add on click to display button
-                $("#displayButton").on("click", function displayItems() {
-                        var itemList = $("<ul>");
-                        itemList.attr("id", "itemList");
-                        items.push(recipesURL);
-                        items.push(recipesTitle);
-
-                        var storedValues = window.localStorage.myitems;
-                        if (!storedValues) {
-                            items.innerHTML = '<li>Make a to do list</li>' +
-                                '<li>Check off first thing on the to do list</li>' +
-                                '<li>Realize you have already accomplished 2 things in the list</li>' +
-                                '<li>Reward yourself with a nap</li>';
-                            $("#list").append(items);
-
-                        }
-                        else {
-                            items.innerHTML = storedValues;
-                            alert("too many recipes in log");
-                        }
-
-
-                        // if (items.length < 10) {
-
-                        //    (items);
-                        //    $("#list").html('<li>Make a to do list</li>' +
-                        //     '<li>Check off first thing on the to do list</li>' +
-                        //     '<li>Realize you have already accomplished 2 things in the list</li>' +
-                        //     '<li>Reward yourself with a nap</li>');
-                        // }
-                        // else {
-   
-                        // }
-                    });
 
                 $("#ingrButton").on("click", function () {
                     $.ajax({
@@ -162,27 +157,26 @@ function generateRecipe() {
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
-                            // $("#ingrTitle").toggleClass("hide");
-                            // $("#ingrTitle").html("Ingredients: ");
-
+                            var fullList = $("<ul>");
+                            
                             for (var i = 0; i < ingrArr.length; i++) {
                                 $("#fullGroceryList").append("<li>" + (i + 1) + ". " + ingrArr[i] + "</li>");
                                 var input = $("#savedGroceryList");
                                 localStorage.setItem("server", input.value);
-                            }
+                            };
 
                             $("#showGroceryList").on("click", function () {
-                                $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
+                                $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
                                 $("#showGroceryList").hide();
                                 $('#fullGroceryList').show();
-                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
+                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
 
                             $("#fullGroceryList").click(function () {
-                                $(this).animate({ width: 0 }, { duration: 1000 });
+                                $(this).animate({ width: 100 }, { duration: 1300 });
                                 $(this).hide();
                                 $('#showGroceryList').show();
-                                $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
+                                $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
                         }),
                         error: (function (error) {
@@ -219,12 +213,25 @@ function generateRecipe() {
                     sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
                 }
+                recipesURL.attr("href", sourceURL);
+                recipesURL.attr("target", "_blank");
+                recipesURL.text("Click for recipe!");
+                $("#recipes-url").empty().append(recipesURL);
+                $("#recipe-title").empty().append(recipesTitle);
 
                 recipesURL.attr("href", sourceURL);
                 recipesURL.attr("target", "_blank");
-                recipesURL.text("Click here for the recipe!");
-                $("#recipes-url").empty().append(recipesURL);
-                $("#recipe-title").empty().append(recipesTitle);
+                recipesURL.text("Click for recipe!");
+
+                var items = [];     
+
+                $("#displayButton").on("click", function displayItems() {
+                    items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
+                    items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
+                    $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
+                    console.log(link);
+                    console.log(recipesURL);
+                });
 
                 function image() {
                     var img = document.createElement("IMG");
@@ -232,31 +239,6 @@ function generateRecipe() {
                     $('.container-recipe-image').html(img);
                 }
                 image();
-                var items = [];
-
-                //add on click to add button jquery
-                $("#addButton").on("click", function addItems() {
-                    items.push(document.getElementById("txtArea").value);
-                    document.getElementById('txtArea').value = '';
-                    console.log('items = [' + recipesTitle + ']');
-                    items.push(recipesTitle);
-                    items.push(recipesURL);
-                    $("#list").html(items);
-                });
-
-                //add on click to display button
-                $("#displayButton").on("click", function displayItems() {
-                    var itemList = $("<ul>");
-                    itemList.attr("id", "itemList");
-                    $("#list").html(items);
-                });
-
-                $('.tags_select a').click(function () {
-                    var value = $(this).text();
-                    var input = $('#txtArea');
-                    input.val(input.val() + value + ', ');
-                    return false;
-                });
 
                 $("#ingrButton").on("click", function () {
                     $.ajax({
@@ -269,8 +251,6 @@ function generateRecipe() {
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
-                            // $("#ingrTitle").toggleClass("hide");
-                            // $("#ingrTitle").html("Ingredients: ");
 
                             $(".fas fa-heart").on("click", function () {
                                 // add recipe title and url to local storage nav bar
@@ -283,17 +263,17 @@ function generateRecipe() {
                             }
 
                             $("#showGroceryList").on("click", function () {
-                                $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
+                                $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
                                 $("#showGroceryList").hide();
                                 $('#fullGroceryList').show();
-                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
+                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
 
                             $("#fullGroceryList").click(function () {
-                                $(this).animate({ width: 0 }, { duration: 1000 });
+                                $(this).animate({ width: 100 }, { duration: 1300 });
                                 $(this).hide();
                                 $('#showGroceryList').show();
-                                $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
+                                $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
                         }),
                         error: (function (error) {
@@ -317,7 +297,7 @@ function generateRecipe() {
                 key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
                 q: "seafood",
             },
-            success: (function (result) {
+                        success: (function (result) {
                 recipesArr = JSON.parse(result);
                 randomArr = recipesArr.recipes;
                 randomArr.sort(function () { return 0.5 - Math.random(); });
@@ -334,12 +314,24 @@ function generateRecipe() {
                     sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
                 }
+                recipesURL.attr("href", sourceURL);
+                recipesURL.attr("target", "_blank");
+                recipesURL.text("Click for recipe!");
+                $("#recipes-url").empty().append(recipesURL);
+                $("#recipe-title").empty().append(recipesTitle);
 
                 recipesURL.attr("href", sourceURL);
                 recipesURL.attr("target", "_blank");
-                recipesURL.text("Click here for the recipe!");
-                $("#recipes-url").empty().append(recipesURL);
-                $("#recipe-title").empty().append(recipesTitle);
+                recipesURL.text("Click for recipe!");
+
+                var items = [];             
+                $("#displayButton").on("click", function displayItems() {
+                    items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
+                    items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
+                    $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
+                    console.log(link);
+                    console.log(recipesURL);
+                });
 
                 function image() {
                     var img = document.createElement("IMG");
@@ -347,38 +339,6 @@ function generateRecipe() {
                     $('.container-recipe-image').html(img);
                 }
                 image();
-
-                var items = [];
-
-                //add on click to add button jquery
-                $("#addButton").on("click", function addItems() {
-                    items.push(document.getElementById("txtArea").value);
-                    document.getElementById('txtArea').value = '';
-                    console.log('items = [' + recipesTitle + ']');
-                    items.push(recipesTitle);
-                    items.push(recipesURL);
-                    $("#list").html(items);
-                });
-
-                //add on click to display button
-                $("#displayButton").on("click", function displayItems() {
-                    var itemList = $("<ul>");
-                    itemList.attr("id", "itemList");
-                    items.push(recipesTitle);
-                    items.push(recipesURL);
-                    for (i = 0; i < items.length; i++) {
-                        // items.merge(items[i]);
-                        $("#list").html(items[i]);
-                    }
-
-                });
-
-                $('.tags_select a').click(function () {
-                    var value = $(this).text();
-                    var input = $('#txtArea');
-                    input.val(input.val() + value + ', ');
-                    return false;
-                });
 
                 $("#ingrButton").on("click", function () {
                     $.ajax({
@@ -391,8 +351,6 @@ function generateRecipe() {
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
-                            // $("#ingrTitle").toggleClass("hide");
-                            // $("#ingrTitle").html("Ingredients: ");
 
                             $(".fas fa-heart").on("click", function () {
                                 // add recipe title and url to local storage nav bar
@@ -405,17 +363,17 @@ function generateRecipe() {
                             }
 
                             $("#showGroceryList").on("click", function () {
-                                $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
+                                $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
                                 $("#showGroceryList").hide();
                                 $('#fullGroceryList').show();
-                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
+                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
 
                             $("#fullGroceryList").click(function () {
-                                $(this).animate({ width: 0 }, { duration: 1000 });
+                                $(this).animate({ width: 100 }, { duration: 1300 });
                                 $(this).hide();
                                 $('#showGroceryList').show();
-                                $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
+                                $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
                         }),
                         error: (function (error) {
@@ -452,12 +410,24 @@ function generateRecipe() {
                     sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
                 }
+                recipesURL.attr("href", sourceURL);
+                recipesURL.attr("target", "_blank");
+                recipesURL.text("Click for recipe!");
+                $("#recipes-url").empty().append(recipesURL);
+                $("#recipe-title").empty().append(recipesTitle);
 
                 recipesURL.attr("href", sourceURL);
                 recipesURL.attr("target", "_blank");
-                recipesURL.text("Click here for the recipe!");
-                $("#recipes-url").empty().append(recipesURL);
-                $("#recipe-title").empty().append(recipesTitle);
+                recipesURL.text("Click for recipe!");
+
+                var items = [];             
+                $("#displayButton").on("click", function displayItems() {
+                    items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
+                    items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
+                    $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
+                    console.log(link);
+                    console.log(recipesURL);
+                });
 
                 function image() {
                     var img = document.createElement("IMG");
@@ -465,33 +435,6 @@ function generateRecipe() {
                     $('.container-recipe-image').html(img);
                 }
                 image();
-
-                var items = [];
-
-                //add on click to add button jquery
-                $("#addButton").on("click", function addItems() {
-                    items.push(document.getElementById("txtArea").value);
-                    document.getElementById('txtArea').value = '';
-                    console.log('items = [' + recipesTitle + ']');
-                    items.push(recipesTitle);
-                    items.push(recipesURL);
-                    $("#list").html(items);
-                });
-
-                //add on click to display button
-                $("#displayButton").on("click", function displayItems() {
-                    var itemList = $("<ul>");
-                    itemList.attr("id", "itemList");
-                    $("#itemList")
-                    $("#list").html(items);
-                });
-
-                $('.tags_select a').click(function () {
-                    var value = $(this).text();
-                    var input = $('#txtArea');
-                    input.val(input.val() + value + ', ');
-                    return false;
-                });
 
                 $("#ingrButton").on("click", function () {
                     $.ajax({
@@ -504,15 +447,6 @@ function generateRecipe() {
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
-
-
-                            // $("#ingrTitle").toggleClass("hide");
-                            // $("#ingrTitle").html("Ingredients: ");
-
-                            $(".fas fa-heart").on("click", function () {
-                                // add recipe title and url to local storage nav bar
-                            });
-
                             $(".fas fa-heart").on("click", function () {
                                 // add recipe title and url to local storage nav bar
                             });
@@ -524,17 +458,17 @@ function generateRecipe() {
                             }
 
                             $("#showGroceryList").on("click", function () {
-                                $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
+                                $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
                                 $("#showGroceryList").hide();
                                 $('#fullGroceryList').show();
-                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
+                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
 
                             $("#fullGroceryList").click(function () {
-                                $(this).animate({ width: 0 }, { duration: 1000 });
+                                $(this).animate({ width: 100 }, { duration: 1300 });
                                 $(this).hide();
                                 $('#showGroceryList').show();
-                                $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
+                                $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
                         }),
                         error: (function (error) {
@@ -571,13 +505,24 @@ function generateRecipe() {
                     sourceURL = randomArr[i].source_url;
                     recipesTitle = randomArr[i].title;
                 }
+                recipesURL.attr("href", sourceURL);
+                recipesURL.attr("target", "_blank");
+                recipesURL.text("Click for recipe!");
+                $("#recipes-url").empty().append(recipesURL);
+                $("#recipe-title").empty().append(recipesTitle);
 
                 recipesURL.attr("href", sourceURL);
                 recipesURL.attr("target", "_blank");
-                recipesURL.text("Click here for the recipe!");
-                $("#recipes-url").empty().append(recipesURL);
+                recipesURL.text("Click for recipe!");
 
-                $("#recipe-title").empty().append(recipesTitle);
+                var items = [];             
+                $("#displayButton").on("click", function displayItems() {
+                    items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
+                    items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
+                    $('#list').prepend("<p>" + items.join("</p><p>") + "</p>");
+                    console.log(link);
+                    console.log(recipesURL);
+                });
 
                 function image() {
                     var img = document.createElement("IMG");
@@ -585,6 +530,7 @@ function generateRecipe() {
                     $('.container-recipe-image').html(img);
                 }
                 image();
+
                 $("#ingrButton").on("click", function () {
                     $.ajax({
                         type: "GET",
@@ -608,18 +554,17 @@ function generateRecipe() {
                             }
 
                             $("#showGroceryList").on("click", function () {
-                                $("#showGroceryList").animate({ width: 0 }, { duration: 1000 });
+                                $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
                                 $("#showGroceryList").hide();
                                 $('#fullGroceryList').show();
-                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1000 });
+                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
 
-
                             $("#fullGroceryList").click(function () {
-                                $(this).animate({ width: 0 }, { duration: 1000 });
+                                $(this).animate({ width: 100 }, { duration: 1300 });
                                 $(this).hide();
                                 $('#showGroceryList').show();
-                                $('#showGroceryList').animate({ width: 100 }, { duration: 1000 });
+                                $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
                             });
 
                         }),
@@ -637,6 +582,11 @@ function generateRecipe() {
 }
 generateRecipe();
 
+/**
+    * Display the go to top of page button
+    * only when the screen has been scrolled down 100px
+    * otherwise it is hidden
+*/
 $(window).scroll(function () {
     if ($(this).scrollTop() >= 100) {
         $('#scrolling').fadeIn(200);
@@ -645,18 +595,30 @@ $(window).scroll(function () {
     }
 });
 
-// $('.random-recipe-title').each(function () {
-//     $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-// });
+/**
+    * Animation for header 'Random Recipe Delights'
+    * Fading in one letter at a time
+*/
+$('.random-recipe-title').each(function () {
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
 
-// anime.timeline({ loop: false }).add({
-//     targets: '.random-recipe-title .letter',
-//     opacity: [0, 1],
-//     easing: "easeInOutQuad",
-//     duration: 2250,
-//     delay: function (el, i) {
-//         return 150 * (i + 1);
-//     }
-// });
+anime.timeline({ loop: false }).add({
+    targets: '.random-recipe-title .letter',
+    opacity: [0, 1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: function (el, i) {
+        return 150 * (i + 1);
+    }
+});
 
-
+/**
+    * Clicking on 'Pick another recipe' link gradually scrolls user 
+    * up the screen to display the 'Random Delight' button
+*/
+$(".show-more").on("click", function() {	
+	$("html, body").animate({
+		scrollTop: $(".random-recipe-title").offset().top 
+	}, 2000);
+});
