@@ -118,18 +118,37 @@ function generateRecipe() {
                 var items = [];
                 //add on click to display button
                 $("#displayButton").on("click", function displayItems() {
-
                         var itemList = $("<ul>");
                         itemList.attr("id", "itemList");
+                        items.push(recipesURL);
+                        items.push(recipesTitle);
 
-                        if (items.length < 10) {
-                            items.push(recipesURL);
-                            items.push(recipesTitle);
-                            $("#list").html(items);
+                        var storedValues = window.localStorage.myitems;
+                        if (!storedValues) {
+                            items.innerHTML = '<li>Make a to do list</li>' +
+                                '<li>Check off first thing on the to do list</li>' +
+                                '<li>Realize you have already accomplished 2 things in the list</li>' +
+                                '<li>Reward yourself with a nap</li>';
+                            $("#list").append(items);
+
                         }
                         else {
+                            items.innerHTML = storedValues;
                             alert("too many recipes in log");
                         }
+
+
+                        // if (items.length < 10) {
+
+                        //    (items);
+                        //    $("#list").html('<li>Make a to do list</li>' +
+                        //     '<li>Check off first thing on the to do list</li>' +
+                        //     '<li>Realize you have already accomplished 2 things in the list</li>' +
+                        //     '<li>Reward yourself with a nap</li>');
+                        // }
+                        // else {
+   
+                        // }
                     });
 
                 $("#ingrButton").on("click", function () {
