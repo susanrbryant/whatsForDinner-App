@@ -548,24 +548,26 @@ function generateRecipe() {
                                 localStorage.setItem("server", input.value);
                             }
 
-                            $("#showGroceryList").on("click", function () {
-                                $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
-                                $("#showGroceryList").hide();
-                                $('#fullGroceryList').show();
-                                $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
-                            });
+                        })
 
-                            $("#fullGroceryList").click(function () {
-                                $(this).animate({ width: 100 }, { duration: 1300 });
-                                $(this).hide();
-                                $('#showGroceryList').show();
-                                $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
-                            });
-
-                        }),
+                        });
                         error: (function (error) {
                             console.log("error: " + error);
                         })
+
+                        $("#showGroceryList").on("click", function () {
+                            $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
+                            $("#showGroceryList").hide();
+                            $('#fullGroceryList').show();
+                            $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
+                        });
+
+                        $("#fullGroceryList").click(function () {
+                            $(this).animate({ width: 100 }, { duration: 1300 });
+                            $(this).hide();
+                            $('#showGroceryList').show();
+                            $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
+                        });
                     });
                 });
             }),
