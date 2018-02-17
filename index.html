@@ -1,321 +1,168 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
 
-	<meta charset="UTF-8">
-    
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	    
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">    
-    
-<!--<link rel="icon" type="image/png" href="assets/img/icons/favicon.png">-->
-    
-<!--
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-PROBABLY NOT USEING - BOOTSTRAP THREME
-- Optional theme -
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
--->
-    
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-	
-	<title>Random Recipe</title>
-    
+    <title>Random Recipe Delights</title>
 </head>
 
 <body>
-
-<script>
-
-</script>
-
-
-<style>
-
-ol, ul {
-    margin-top: 0;
-    margin-bottom: 10px;
-	list-style-type: none;
-}
-
-
-
-
-
-.container-recipe{ 
-	background-color: #ffffff;
-	padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    -webkit-transition: border .2s ease-in-out;
-    -o-transition: border .2s ease-in-out;
-    transition: border .2s ease-in-out;
-}
-
-.container-recipe-image {
-	height: 150px;
-	width: 150px;
-	border: 1px solid #dddddd;
-}
-
-.ingredients { padding: 0px 0px 0px 0px; }
-
-.image-recipe {
-
-}
-
-.read-more{
-	padding-top: 10px;
-	text-align: right;
-}
-
-.dev-box-blue{
-	border: 1px solid BLUE;
-}
-
-.dev-box-green{
-	border: 1px solid GREEN;
-}
-
-.dev-box-red{
-	border: 1px solid RED;
-}
-
-
-/*pexels-photo-small.png*/
-
-
-
-</style>
-
-
-
-    <div class="container">
-    
-        <!-- HEADER -->
+    <div class="wrapper">
         <header class="header">
-        
-            <!--<p class="navbar-text navbar-right">Random Recipe<a href="#" class="navbar-link">Mark Otto</a></p>-->
-        
-            <!-- NAVIGATION -->
             <nav class="navbar navbar-default">
-            
                 <div class="container-fluid">
-            
                     <div class="navbar-header">
-                    
-                        <!--
-                        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" 
-                            data-target="#bs-example-navbar-collapse-5" aria-expanded="false">
-                        
-                        <span class="sr-only">Toggle navigation</span>
-                        
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        
-                        </button> 
-                        -->
-                        
-                        <a href="#" class="navbar-brand">Brand</a> 
-                        
+                        <div class="container">
+                            <div id="mySidenav" class="sidenav">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;Recipe Log</a>
+                                <ul id="list"></ul>
+                            </div>
+                            <div class="container-hamburger-menu">
+                                <a href="#" id="main" class="hamburger-menu" onclick="openNav()">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div>
+                            <div class="container-logo">
+                                <a href="#" class="navbar-brand logo">Random Recipes</a>
+                            </div>
+                        </div>
                     </div>
-            
-                    <div id="" class="collapse navbar-collapse" >
-                        
-                        <p class="navbar-text navbar-right">
-                            <!--Signed in as <a href="#" class="navbar-link">Mark Otto</a>-->
-                        </p>
-                    
-                    </div>
-                    
                 </div>
-                
             </nav>
-            <!-- // NAVIGATION -->
-                        
-        </header>            
-        <!-- // HEADER -->
-                
-        <!-- CONTENT -->  
-        <div class="container-fluid">
-            
-            
-            <div class="row">
-                <div class="col-md-12">   
-                    <h1 class="title-random-recipe">Random Recipe Delights</h1>
+        </header>
+        <div class="row category-row">
+        <div class="container-fluid intro">
+            <div class="row introduction">
+                <div class="col-md-12">
+                    <h1 class="random-recipe-title">Random Recipe Delights</h1>
+                    <h3 class="random-whats-dinner">What's for dinner?</h3>
+                <div class="row change-recipes">
+                     <div class="col-md-12">
+                        <button type="button" id="randomButton" class="btn btn-default random-search-btn">
+                               Random Delight
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row category-row">
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" id="chickenButton" class="btn btn-default">
+                                    Chicken
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" id="seafoodButton" class="btn btn-default">
+                                    Seafood
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" id="vegetablesButton" class="btn btn-default">
+                                    Veggies
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" id="pastaButton" class="btn btn-default">
+                                    Pasta
+                                </button>
+                            </div>
+                        </div>
                 </div>
             </div>
-            
-            
-            <!-- content --> 
+        </div>
+
+        <div class="container">
             <div class="content">
-                      
-                <!-- Row 1 --> 
-				<div class="row main-content">
-                
-                	<div class="col-xs-12 col-md-6">
-                    
+                <div class="row main-content">
+                    <div class="col-xs-12 col-sm-6 main-content-column">
                         <div class="container-recipe">
-
                             <div class="container-recipe-image">
-                            
-								<img href="javascript:image();" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-                            </div> 
-                               
-                            <h2>Recipe title</h2>
-                            
-                            <h3>Ingredients</h3>
-                            <ul class="ingredients">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        
-                        </div>
-
-                    <button id="randomButton"> random! </button>
-                        
-                    </div>
-								
-                	<div class="col-xs-12 col-md-6">
-                    
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-                            </div> 
-                               
-                            <h2>Recipe title</h2>
-                            
-                            <h3>Ingredients</h3>
-                            <ul class="ingredients">
-                                <li>Cras justo odio</li>
-                                <li>dapibus ac facilisis in</li>
-                                <li>Donec id elit non mi porta gravida at eget metus</li>
-                                <li>egestas eget quam</li>
-                                <li>Nullam id dolor id nibh ultricies vehicula ut id elit</li>
-                                <li>egestas eget quam</li>
-                                <li>Cras justo odio</li>
-                            </ul>
-                        
-                        </div>
-                        
-                    </div>
-                    
-				</div>
-				<!-- // Row 1 -->
-
-
-				<!-- Row 2 -->
-				<div class="row inner-content">
-                	<div class="col-xs-6 col-md-3">
-                    
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-                            </div> 
-                               
-							<p class="read-more">more ...</p>
-                        
+                                <img href="javascript:image();" alt="Recipe Image" title="Recipe Image" id="image-recipe" class="image-recipe">
+                            </div>
                         </div>
                     </div>
 
-                	<div class="col-xs-6 col-md-3">
-                    
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-                            </div> 
-                               
-							<p class="read-more">more ...</p>
-                                                    
+                    <div class="col-xs-12 col-sm-6 main-content-column">
+                        <div id="main-content-col" class="container-recipe content-recipe">
+                            <div class="row content-row">
+                                <p class="favorite text-right">
+                                <i class="fas fa-heart"></i>
+                                <h2 id="recipe-title" class="recipe-title"></h2>
+                                <hr/>
+                                <p id="url-para">
+                                    <h4 id="recipes-url" class="recipes-url"></h4>
+                                </p>
+                                <hr/>
+                                <p id="add-para">                        
+                                    <input type="button" value="Add to Recipe Log" id="displayButton">
+                                </p> 
+                                <hr/>
+                                <button type="button" id="ingrButton" class="btn btn-default-sm">
+                                    Add to Grocery List
+                                </button>
+                            </div>
                         </div>
-                        
                     </div>
-
-                	<div class="col-xs-6 col-md-3">
-                    
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-                            </div> 
-                               
-							<p class="read-more">more ...</p>
-                        
-                        </div>
-                        
-                    </div>
-                    
-                	<div class="col-xs-6 col-md-3">
-                    
-                        <div class="container-recipe">
-
-                            <div class="container-recipe-image">
-                            
-								<img src="#" alt="Recipe Image" title="Recipe Image" class="image-recipe">
-                            </div> 
-
-                            <p class="read-more">more ...</p>
-                        
-                        </div>
-                        
-                    </div> 
-				</div>
-				<!-- // Row 2 -->
-                
-                
-
-            </div>
-            <!-- // .content --> 
-            
-            
-            <footer class="footer">
-            
-                <div class="inner-footer">
-                 
-                    &copy; [Add JS Dynamic Year] Susan R Bryant, ..., ...
-                
                 </div>
-            
-            </footer>       
-           
-            
-        </div> 
-        <!-- // CONTENT --> 
-     </div> <!-- // container -->
-  
-    <!-- Script tags go here: -->
-  
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            </div>
+            <div class="row main-content">
+                <div class="row third-content">
+                    <div class="col-md-12">
+                        <div id="showGroceryList">
+                            View Your Full Grocery List!
+                        </div>
+                        <div id="fullGroceryList">
+                            <p id="groceryList">Full Grocery List!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row main-content">
+                <div class="col-xs-12 col-sm-6">
+                    <p class="read-more">
+                        <a href="#" class="show-more">Pick another Recipe</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="social">
+                        <p class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </p>
+                    </div>
+                    <a id="scrolling" href="#top">
+                        <i class="fas fa-angle-up"></i>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="copyright">
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> by Susan R Bryant, Krista Jesek, Andrew
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script>
 
+    </script>
 </body>
+
 </html>
-
-
