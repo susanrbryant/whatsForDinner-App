@@ -10,15 +10,15 @@ var recipeArr = [];
 var search;
 var itemList;
 
- /** 
- * You're able to save a favorite recipe to the local storage.
- * @function save
- * @param {string} 
- * @function store
- * @param {string} 
- * @function getValues
- * @return 
- * @param {string} list.innerHTML = stored value.
+/** 
+* You're able to save a favorite recipe to the local storage.
+* @function save
+* @param {string} 
+* @function store
+* @param {string} 
+* @function getValues
+* @return 
+* @param {string} list.innerHTML = stored value.
 */
 function save() {
 
@@ -79,21 +79,21 @@ function closeNav() {
 }
 
 
- /**
- * Gets images data from Food2Fork API
- * @function generates recipe and ingredients
-        * @function on click - randomButton
-        * @function on click - chickenButton
-        * @function on click - seafoodButton
-        * @function on click - vegetablesButton
-        * @function on click - pastaButton
- * @param {object} results - JSON data recieved from food2fork
- * @param {string} results - recipes-url 
- * @param {string} results - recipes-title
- * @function error
- * @param {string} error
- * @return {array} food2fork - recipesImage
- */
+/**
+* Gets images data from Food2Fork API
+* @function generates recipe and ingredients
+       * @function on click - randomButton
+       * @function on click - chickenButton
+       * @function on click - seafoodButton
+       * @function on click - vegetablesButton
+       * @function on click - pastaButton
+* @param {object} results - JSON data recieved from food2fork
+* @param {string} results - recipes-url 
+* @param {string} results - recipes-title
+* @function error
+* @param {string} error
+* @return {array} food2fork - recipesImage
+*/
 function generateRecipe() {
     $("#randomButton").on("click", function () {
         $.ajax({
@@ -106,6 +106,7 @@ function generateRecipe() {
             success: (function (result) {
                 recipesArr = JSON.parse(result);
                 randomArr = recipesArr.recipes;
+                console.log(randomArr);
                 randomArr.sort(function () { return 0.5 - Math.random(); });
 
                 var recipesTitle = $("<p>");
@@ -130,7 +131,7 @@ function generateRecipe() {
                 recipesURL.attr("target", "_blank");
                 recipesURL.text("Click for recipe!");
 
-                var items = [];             
+                var items = [];
                 $("#displayButton").on("click", function displayItems() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
@@ -154,10 +155,12 @@ function generateRecipe() {
                             rId: recipesID
                         },
                         success: (function (result) {
+                        
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
+                            console.log(ingrArr);
                             var fullList = $("<ul>");
-                            
+
                             for (var i = 0; i < ingrArr.length; i++) {
                                 $("#fullGroceryList").append("<li>" + (i + 1) + ". " + ingrArr[i] + "</li>");
                                 var input = $("#savedGroceryList");
@@ -222,7 +225,7 @@ function generateRecipe() {
                 recipesURL.attr("target", "_blank");
                 recipesURL.text("Click for recipe!");
 
-                var items = [];     
+                var items = [];
 
                 $("#displayButton").on("click", function displayItems() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
@@ -249,10 +252,6 @@ function generateRecipe() {
                         success: (function (result) {
                             recipeArr = JSON.parse(result);
                             ingrArr = recipeArr.recipe.ingredients;
-
-                            $(".fas fa-heart").on("click", function () {
-                                // add recipe title and url to local storage nav bar
-                            });
 
                             for (var i = 0; i < ingrArr.length; i++) {
                                 $("#fullGroceryList").append("<li>" + (i + 1) + ". " + ingrArr[i] + "</li>");
@@ -295,7 +294,7 @@ function generateRecipe() {
                 key: "2a8b74ca359dd160bef9caeb0fa0ae5e",
                 q: "seafood",
             },
-                        success: (function (result) {
+            success: (function (result) {
                 recipesArr = JSON.parse(result);
                 randomArr = recipesArr.recipes;
                 randomArr.sort(function () { return 0.5 - Math.random(); });
@@ -322,7 +321,7 @@ function generateRecipe() {
                 recipesURL.attr("target", "_blank");
                 recipesURL.text("Click for recipe!");
 
-                var items = [];             
+                var items = [];
                 $("#displayButton").on("click", function displayItems() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
@@ -417,7 +416,7 @@ function generateRecipe() {
                 recipesURL.attr("target", "_blank");
                 recipesURL.text("Click for recipe!");
 
-                var items = [];             
+                var items = [];
                 $("#displayButton").on("click", function displayItems() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
@@ -511,7 +510,7 @@ function generateRecipe() {
                 recipesURL.attr("target", "_blank");
                 recipesURL.text("Click for recipe!");
 
-                var items = [];             
+                var items = [];
                 $("#displayButton").on("click", function displayItems() {
                     items.push("<h4 id='logTitle'>" + recipesTitle + "</h4>");
                     items.push("<a id='sourceURL'>" + sourceURL + "</a> </h5>");
@@ -550,29 +549,29 @@ function generateRecipe() {
 
                         })
 
-                        });
-
-
-                        $("#showGroceryList").on("click", function () {
-                            $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
-                            $("#showGroceryList").hide();
-                            $('#fullGroceryList').show();
-                            $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
-                        });
-
-                        $("#fullGroceryList").click(function () {
-                            $(this).animate({ width: 100 }, { duration: 1300 });
-                            $(this).hide();
-                            $('#showGroceryList').show();
-                            $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
-                        });
                     });
-                })
+
+
+                    $("#showGroceryList").on("click", function () {
+                        $("#showGroceryList").animate({ width: 100 }, { duration: 1300 });
+                        $("#showGroceryList").hide();
+                        $('#fullGroceryList').show();
+                        $('#fullGroceryList').animate({ width: 400 }, { duration: 1300 });
+                    });
+
+                    $("#fullGroceryList").click(function () {
+                        $(this).animate({ width: 100 }, { duration: 1300 });
+                        $(this).hide();
+                        $('#showGroceryList').show();
+                        $('#showGroceryList').animate({ width: 400 }, { duration: 1300 });
+                    });
+                });
             })
-            
-        });
-    
-    
+        })
+
+    });
+
+
 }
 generateRecipe();
 
@@ -611,8 +610,21 @@ anime.timeline({ loop: false }).add({
     * Clicking on 'Pick another recipe' link gradually scrolls user 
     * up the screen to display the 'Random Delight' button
 */
-$(".show-more").on("click", function() {	
-	$("html, body").animate({
-		scrollTop: $(".random-recipe-title").offset().top 
-	}, 2000);
+$(".show-more").on("click", function () {
+    $("html, body").animate({
+        scrollTop: $(".introduction").offset().top
+    }, 'slow');
 });
+
+
+$(".recipeButton").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".container-recipe").offset().top
+    },
+        'slow');
+});
+// * @function on click - randomButton
+// * @function on click - chickenButton
+// * @function on click - seafoodButton
+// * @function on click - vegetablesButton
+// * @function on click - pastaButton
