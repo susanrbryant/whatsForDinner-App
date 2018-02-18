@@ -23,7 +23,7 @@
                     <div class="navbar-header">
                         <div class="container">
                             <div id="mySidenav" class="sidenav">
-                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;Recipe Log</a>
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;  Recipe Log</a>
                                 <ul id="list"></ul>
                             </div>
                             <div class="container-hamburger-menu">
@@ -39,7 +39,6 @@
                 </div>
             </nav>
         </header>
-        <div class="row category-row">
         <div class="container-fluid intro">
             <div class="row introduction">
                 <div class="col-md-12">
@@ -47,53 +46,53 @@
                     <h3 class="random-whats-dinner">What's for dinner?</h3>
                 <div class="row change-recipes">
                      <div class="col-md-12">
-                        <button type="button" id="randomButton" class="btn btn-default random-search-btn">
-                               Random Delight
-                            </button>
-                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3" id="randomButton">
+                            <button type="button" id="randomButton" class="btn btn-default random-search-btn recipeButton">
+                                Random
+                                </button>
+                            </div>
+                        </div>    
                     </div>
-                    <div class="row category-row">
+                <div class="row category-row">
                             <div class="col-xs-6 col-sm-6 col-md-3">
-                                <button type="button" id="chickenButton" class="btn btn-default">
+                                <button type="button" id="chickenButton" class="btn btn-default recipeButton">
                                     Chicken
                                 </button>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-3">
-                                <button type="button" id="seafoodButton" class="btn btn-default">
+                                <button type="button" id="seafoodButton" class="btn btn-default recipeButton">
                                     Seafood
                                 </button>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-3">
-                                <button type="button" id="vegetablesButton" class="btn btn-default">
+                                <button type="button" id="vegetablesButton" class="btn btn-default recipeButton">
                                     Veggies
                                 </button>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-3">
-                                <button type="button" id="pastaButton" class="btn btn-default">
+                                <button type="button" id="pastaButton" class="btn btn-default recipeButton">
                                     Pasta
                                 </button>
                             </div>
                         </div>
                 </div>
             </div>
-        </div>
+         </div>
 
         <div class="container">
             <div class="content">
                 <div class="row main-content">
-                    <div class="col-xs-12 col-sm-6 main-content-column">
-                        <div class="container-recipe">
-                            <div class="container-recipe-image">
+                    <div class="col-xs-10 col-sm-5 main-content-column">
+                        <div class="container-recipe-image container-recipe">
+                            <p>
                                 <img href="javascript:image();" alt="Recipe Image" title="Recipe Image" id="image-recipe" class="image-recipe">
-                            </div>
+                            </p>
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-6 main-content-column">
+                    <div class="col-xs-10 col-sm-5 main-content-column">
                         <div id="main-content-col" class="container-recipe content-recipe">
                             <div class="row content-row">
-                                <p class="favorite text-right">
-                                <i class="fas fa-heart"></i>
                                 <h2 id="recipe-title" class="recipe-title"></h2>
                                 <hr/>
                                 <p id="url-para">
